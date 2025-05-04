@@ -1,29 +1,19 @@
 #!/bin/bash
 
-# Caminho da pasta principal do site
-DESTINO=~/moz-vip-way-atendimento
+# Navegar até o diretório do projeto (opcional, caso esteja em outro diretório)
+cd ~/moz-vip-way-atendimento
 
-# Arquivos que serão atualizados na raiz do site
-# Coloque os arquivos atualizados (index.html, style.css, script.js etc.)
-# em uma pasta chamada `atualizacoes` dentro de `moz-vip-way-atendimento`
+# Inicializar o repositório Git (caso não tenha feito isso antes)
+git init
 
-ATUALIZACOES="$DESTINO/atualizacoes"
+# Adicionar o repositório remoto (substitua pelo seu repositório GitHub)
+git remote add origin https://github.com/carmon-byts/seu-repositorio.git
 
-# Verificar se a pasta de atualizações existe
-if [ ! -d "$ATUALIZACOES" ]; then
-  echo "A pasta 'atualizacoes' não existe. Crie ela em $ATUALIZACOES e coloque os arquivos que deseja atualizar."
-  exit 1
-fi
+# Adicionar todas as mudanças no repositório
+git add .
 
-# Ir para a pasta do site
-cd "$DESTINO" || exit
+# Fazer o commit com uma mensagem
+git commit -m "Atualização do site"
 
-# Atualizar apenas os arquivos da raiz, sem tocar nas subpastas
-for ARQUIVO in "$ATUALIZACOES"/*; do
-  if [ -f "$ARQUIVO" ]; then
-    cp -f "$ARQUIVO" "$DESTINO/"
-    echo "Atualizado: $(basename "$ARQUIVO")"
-  fi
-done
-
-echo "Atualização da raiz do site concluída com sucesso!"
+# Enviar as alterações para o GitHub
+git push -u origin master
