@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Tutorial de Pagamento - M-Pesa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #000;
+      background: linear-gradient(-45deg, #3a0ca3, #4361ee, #4cc9f0, #00b4d8);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      background-color: #ffffffee;
+      padding: 60px 50px;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+      border-radius: 25px;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 42px;
+      color: #004085;
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px #ccc;
+    }
+
+    p {
+      font-size: 22px;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    ol {
+      font-size: 22px;
+      line-height: 2;
+      color: #212529;
+      padding-left: 30px;
+    }
+
+    li {
+      margin-bottom: 15px;
+    }
+
+    .alert-box {
+      background-color: #fff3cd;
+      border-left: 6px solid #ff9800;
+      padding: 25px;
+      border-radius: 10px;
+      font-size: 18px;
+      color: #e65100;
+      font-weight: bold;
+      margin-top: 40px;
+    }
+
+    .number {
+      font-weight: bold;
+      color: #c62828;
+    }
+
+    .nome {
+      font-weight: bold;
+      color: #2e7d32;
+    }
+
+    .nota {
+      margin-top: 30px;
+      font-size: 20px;
+      color: #00695c;
+      font-style: italic;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      p, ol, .nota, .alert-box {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tutorial de Pagamento - M-Pesa</h1>
+    <p>Siga os passos abaixo para efetuar o pagamento corretamente:</p>
+
+    <ol>
+      <li>Acesse o menu do seu telefone e abra o aplicativo <strong>M-Pesa</strong>.</li>
+      <li>Selecione a opção <strong>Transferir Dinheiro (15 MT)</strong>.</li>
+      <li>Digite o número <span class="number">852361783</span>.</li>
+      <li>Confirme se o nome do titular aparece como <span class="nome">CARMÓNIO</span>.</li>
+      <li>Insira o valor exato indicado no site.</li>
+      <li>Confirme o pagamento digitando seu PIN M-Pesa.</li>
+      <li>Após o pagamento, aguarde o envio automático do arquivo no seu WhatsApp.</li>
+    </ol>
+
+    <div class="nota">
+      Nota: depois do pagamento você receberá um arquivo rápido e seguro sem falhas.
+    </div>
+
+    <div class="alert-box">
+      ⚠️ NÃO ESQUEÇA DE ENVIAR FOTO DE CONFIRMAÇÃO DE PAGAMENTO, JUNTO COM SEUS DADOS NO BOTÃO DE SOLICITAR SEU ARQUIVO 📂 ⚠️
+    </div>
+  </div>
+</body>
+</html>

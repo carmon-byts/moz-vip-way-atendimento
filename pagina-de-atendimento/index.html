@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>📡 PAGAMENTO - MOZ VIP WAY 🇲🇿</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('fundo.webp');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      width: 100vw;
+      font-family: Arial, sans-serif;
+      overflow-y: auto;
+    }
+
+    .container {
+      max-width: 100%;
+      height: auto;
+      min-height: 100vh;
+      margin: 0;
+      padding: 40px 20px;
+      background: #fff;
+      border-radius: 0;
+      text-align: center;
+      overflow-y: auto;
+    }
+
+    .info-mpesa {
+      font-size: 40px;
+      font-weight: bold;
+      margin: 30px 0;
+      color: #d60000;
+    }
+
+    .info-mpesa span {
+      color: #007bff;
+      font-size: 42px;
+    }
+
+    .copy-button {
+      background-color: #28a745;
+      color: white;
+      padding: 12px 20px;
+      margin-left: 10px;
+      font-size: 22px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    h2.pagemento-title {
+      font-size: 55px;
+      color: #d60000;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 95%;
+      font-size: 20px;
+      border: 2px solid #007bff;
+      animation: tabelaAnimacao 1.2s ease-in-out;
+    }
+
+    @keyframes tabelaAnimacao {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 20px;
+      color: #222;
+    }
+
+    th {
+      background-color: #007bff;
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    td {
+      background-color: #e6f0ff;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      width: 95%;
+      padding: 30px;
+      margin: 20px 0;
+      border-radius: 8px;
+      border: 2px solid #007bff;
+      font-size: 24px;
+      background-color: #f9f9ff;
+    }
+
+    button.submit {
+      background-color: #28a745;
+      color: white;
+      padding: 40px 80px;
+      border: none;
+      border-radius: 10px;
+      font-size: 32px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 20px;
+      animation: piscarCores 1s infinite;
+    }
+
+    @keyframes piscarCores {
+      0% { background-color: #ffcc00; color: #000; }
+      50% { background-color: #ff00ff; color: #fff; }
+      100% { background-color: #00ffff; color: #000; }
+    }
+
+    @keyframes flashRapid {
+      0%, 100% { background-color: #ffcc00; color: #000; }
+      50% { background-color: #000; color: #ffcc00; }
+    }
+
+    .tutorial-button {
+      font-size: 38px;
+      font-weight: bold;
+      background-color: #ffcc00;
+      color: #000;
+      border: none;
+      padding: 30px 60px;
+      border-radius: 10px;
+      cursor: pointer;
+      animation: flashRapid 0.3s infinite;
+      margin-top: 20px;
+    }
+
+    #screenshot-message {
+      font-size: 38px;
+      font-weight: bold;
+      color: #007bff;
+      text-transform: uppercase;
+      margin-top: 20px;
+      padding: 30px;
+      border-radius: 12px;
+      display: block;
+      width: 95%;
+      margin: 20px auto;
+      text-align: center;
+      box-shadow: 0 0 15px #007bff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="pagamento">
+    <h2 class="pagemento-title">📡 PAGAMENTO VIA M-PESA 📡</h2>
+    <div class="info-mpesa">
+      <div>📱 <span id="numero-mpesa">+258 852361783</span>
+        <button class="copy-button" onclick="copiarTexto('numero-mpesa')">Copiar Número</button>
+      </div><br>
+      <div style="font-size: 36px; color: #ff0000;">VALOR: <strong>15 MT</strong> 💵</div>
+    </div>
+    <button class="tutorial-button" onclick="window.location.href='tutorial_pagamento.html'">
+      📹 APRENDA COMO FAZER O PAGAMENTO PASSO A PASSO
+    </button>
+    <h3 style="font-size: 30px; color: #007bff; font-weight: bold;">💰 Tabela de Preços</h3>
+    <table>
+      <tr><th>🛡️ VPN</th><th>💸 Preço</th></tr>
+      <tr><td>🔐 Http Custom</td><td>15 MT</td></tr>
+      <tr><td>⚙️ Http Injector Lite</td><td>15 MT</td></tr>
+      <tr><td>🛰️ Http Injector</td><td>15 MT</td></tr>
+      <tr><td>🔌 Linklayer</td><td>15 MT</td></tr>
+      <tr><td>🌐 Wry</td><td>15 MT</td></tr>
+      <tr><td>🚀 Bink Tunnel</td><td>15 MT</td></tr>
+      <tr><td>📡 Aio Tunnel</td><td>15 MT</td></tr>
+      <tr><td>🔒 TLS Tunnel</td><td>15 MT</td></tr>
+      <tr><td>🛡️ ESET</td><td>15 MT</td></tr>
+    </table>
+    <form id="paymentForm">
+      <input type="text" id="name" placeholder="✍️ Seu nome" required>
+      <input type="text" id="phone" placeholder="📞 Seu número de WhatsApp" required>
+      <select id="vpnType" required>
+        <option value="" disabled selected>📂 Selecione o tipo de VPN</option>
+        <option>Http Custom</option>
+        <option>Http Injector Lite</option>
+        <option>TLS Tunnel</option>
+        <option>Linklayer</option>
+        <option>Http Injector</option>
+        <option>ESET</option>
+        <option>Http Injector</option>
+        <option>Linklayer</option>
+        <option>Wry</option>
+        <option>Bink Tunnel</option>
+        <option>Aio Tunnel</option>
+      </select>
+      <button type="submit" class="submit">📤 SOLICITAR SEU ARQUIVO NO WATSAPP</button>
+    </form>
+    <div class="message" id="statusMessage"></div>
+  </div>
+
+  <script>
+    function copiarTexto(id) {
+      const texto = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(texto);
+      alert("Copiado: " + texto);
+    }
+
+    document.getElementById("paymentForm").onsubmit = function(event) {
+      event.preventDefault();
+      let nome = document.getElementById("name").value;
+      let phone = document.getElementById("phone").value;
+      let tipo = document.getElementById("vpnType").value;
+      let texto = `✅ Pagamento confirmado por ${nome}. WhatsApp do cliente: ${phone}. Solicitou: ${tipo}`;
+      let linkWhatsApp = `https://wa.me/258852361783?text=${encodeURIComponent(texto)}`;
+      window.open(linkWhatsApp, '_blank');
+    };
+  </script>
+</body>
+</html>
