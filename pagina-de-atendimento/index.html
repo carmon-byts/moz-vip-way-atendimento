@@ -121,22 +121,59 @@
       100% { background-color: #00ffff; color: #000; }
     }
 
-    @keyframes flashRapid {
-      0%, 100% { background-color: #ffcc00; color: #000; }
-      50% { background-color: #000; color: #ffcc00; }
+    .message {
+      margin-top: 20px;
+      font-weight: bold;
+      color: green;
     }
 
+    /* Nova animação para o botão quadrado */
+    @keyframes pulseTutorial {
+      0% { transform: scale(1); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); }
+      50% { transform: scale(1.02); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); }
+      100% { transform: scale(1); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); }
+    }
+
+    /* Botão quadrado com animação */
     .tutorial-button {
-      font-size: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      height: 150px;
+      font-size: 24px;
       font-weight: bold;
       background-color: #ffcc00;
       color: #000;
       border: none;
-      padding: 30px 60px;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
-      animation: flashRapid 0.3s infinite;
-      margin-top: 20px;
+      animation: pulseTutorial 2s infinite;
+      margin: 30px auto;
+      transition: all 0.3s ease;
+    }
+
+    .tutorial-button:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Mensagem animada */
+    @keyframes fadeInOut {
+      0% { opacity: 0.7; }
+      50% { opacity: 1; }
+      100% { opacity: 0.7; }
+    }
+
+    .tutorial-message {
+      font-size: 36px;
+      font-weight: bold;
+      color: #ff0000;
+      display: block;
+      width: 95%;
+      margin: 30px auto;
+      text-align: center;
+      animation: fadeInOut 2s infinite;
     }
 
     #screenshot-message {
@@ -162,11 +199,17 @@
       <div>📱 <span id="numero-mpesa">+258 852361783</span>
         <button class="copy-button" onclick="copiarTexto('numero-mpesa')">Copiar Número</button>
       </div><br>
-      <div style="font-size: 36px; color: #ff0000;">VALOR: <strong>15 MT</strong> 💵</div>
+      <!-- Mensagem alterada -->
+      <div class="tutorial-message">
+        1° CLIQUE NO BOTÃO DE TUTORIAL DE PAGAMENTO PARA APRENDER A FAZER O PAGAMENTO CORRETO 👇
+      </div>
     </div>
-<button onclick="window.location.href='tutorial-de-pagamento/index.html'">
-  📹 APRENDA COMO FAZER O PAGAMENTO PASSO A PASSO
-</button>
+
+    <!-- Botão alterado para quadrado e redirecionando para tutorial-de-pagamento/ -->
+    <button class="tutorial-button" onclick="window.location.href='tutorial-de-pagamento/'">
+      📘<BR>TUTORIAL AQUI
+    </button>
+
     <h3 style="font-size: 30px; color: #007bff; font-weight: bold;">💰 Tabela de Preços</h3>
     <table>
       <tr><th>🛡️ VPN</th><th>💸 Preço</th></tr>
@@ -180,6 +223,7 @@
       <tr><td>🔒 TLS Tunnel</td><td>15 MT</td></tr>
       <tr><td>🛡️ ESET</td><td>15 MT</td></tr>
     </table>
+
     <form id="paymentForm">
       <input type="text" id="name" placeholder="✍️ Seu nome" required>
       <input type="text" id="phone" placeholder="📞 Seu número de WhatsApp" required>
