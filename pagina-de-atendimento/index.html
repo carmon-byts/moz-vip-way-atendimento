@@ -15,14 +15,14 @@
       width: 100vw;
       font-family: Arial, sans-serif;
       overflow-y: auto;
+      scroll-behavior: smooth;
     }
 
     .container {
       max-width: 100%;
-      height: auto;
-      min-height: 100vh;
+      height: 100vh;
       margin: 0;
-      padding: 40px 20px;
+      padding: 20px 20px;
       background: #fff;
       border-radius: 0;
       text-align: center;
@@ -32,7 +32,7 @@
     .info-mpesa {
       font-size: 40px;
       font-weight: bold;
-      margin: 30px 0;
+      margin: 20px 0;
       color: #d60000;
     }
 
@@ -56,12 +56,12 @@
       font-size: 55px;
       color: #d60000;
       font-weight: bold;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       text-shadow: 2px 2px 4px #000;
     }
 
     table {
-      margin: 20px auto;
+      margin: 10px auto;
       border-collapse: collapse;
       width: 95%;
       font-size: 20px;
@@ -76,14 +76,14 @@
 
     th, td {
       border: 1px solid #ddd;
-      padding: 20px;
+      padding: 15px;
       color: #222;
     }
 
     th {
       background-color: #007bff;
       color: white;
-      font-size: 22px;
+      font-size: 20px;
       font-weight: bold;
     }
 
@@ -94,21 +94,21 @@
 
     input, textarea, select {
       width: 95%;
-      padding: 30px;
-      margin: 20px 0;
+      padding: 25px;
+      margin: 15px 0;
       border-radius: 8px;
       border: 2px solid #007bff;
-      font-size: 24px;
+      font-size: 22px;
       background-color: #f9f9ff;
     }
 
     button.submit {
       background-color: #28a745;
       color: white;
-      padding: 40px 80px;
+      padding: 35px 70px;
       border: none;
       border-radius: 10px;
-      font-size: 32px;
+      font-size: 28px;
       cursor: pointer;
       font-weight: bold;
       margin-top: 20px;
@@ -127,14 +127,13 @@
       color: green;
     }
 
-    /* Nova animação para o botão quadrado */
-    @keyframes pulseTutorial {
+    /* Botão quadrado com animação */
+    @keyframes pulse3D {
       0% { transform: scale(1); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); }
       50% { transform: scale(1.02); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); }
       100% { transform: scale(1); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); }
     }
 
-    /* Botão quadrado com animação */
     .tutorial-button {
       display: inline-flex;
       align-items: center;
@@ -143,22 +142,22 @@
       height: 150px;
       font-size: 24px;
       font-weight: bold;
-      background-color: #ffcc00;
+      background: linear-gradient(145deg, #fff, #ffcc00);
       color: #000;
       border: none;
       border-radius: 12px;
       cursor: pointer;
-      animation: pulseTutorial 2s infinite;
-      margin: 30px auto;
+      animation: pulse3D 2s infinite;
       transition: all 0.3s ease;
+      margin: 15px auto 30px auto;
     }
 
     .tutorial-button:hover {
       transform: scale(1.03);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5) !important;
     }
 
-    /* Mensagem animada */
+    /* Mensagem animada com seta 👇 */
     @keyframes fadeInOut {
       0% { opacity: 0.7; }
       50% { opacity: 1; }
@@ -166,12 +165,21 @@
     }
 
     .tutorial-message {
-      font-size: 36px;
+      font-size: 32px;
       font-weight: bold;
       color: #ff0000;
       display: block;
       width: 95%;
-      margin: 30px auto;
+      margin: 20px auto;
+      text-align: center;
+      animation: fadeInOut 2s infinite;
+    }
+
+    .arrow-down {
+      font-size: 40px;
+      color: #ff0000;
+      display: block;
+      margin: 5px auto;
       text-align: center;
       animation: fadeInOut 2s infinite;
     }
@@ -199,13 +207,16 @@
       <div>📱 <span id="numero-mpesa">+258 852361783</span>
         <button class="copy-button" onclick="copiarTexto('numero-mpesa')">Copiar Número</button>
       </div><br>
-      <!-- Mensagem alterada -->
+      <!-- Mensagem com seta 👇 posicionada acima do botão -->
       <div class="tutorial-message">
-        1° CLIQUE NO BOTÃO DE TUTORIAL DE PAGAMENTO PARA APRENDER A FAZER O PAGAMENTO CORRETO 👇
+        1° CLIQUE NO BOTÃO DE TUTORIAL DE PAGAMENTO PARA APRENDER A FAZER O PAGAMENTO CORRETO
       </div>
+      <div class="arrow-down">👇</div>
+
+      <div style="font-size: 36px; color: #ff0000;">VALOR: <strong>15 MT</strong> 💵</div>
     </div>
 
-    <!-- Botão alterado para quadrado e redirecionando para tutorial-de-pagamento/ -->
+    <!-- Botão "TUTORIAL AQUI" -->
     <button class="tutorial-button" onclick="window.location.href='tutorial-de-pagamento/'">
       📘<BR>TUTORIAL AQUI
     </button>
