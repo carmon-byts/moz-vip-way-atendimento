@@ -20,9 +20,10 @@
 
     .container {
       max-width: 100%;
-      height: 100vh;
+      height: auto;
+      min-height: 100vh;
       margin: 0;
-      padding: 20px 20px;
+      padding: 20px;
       background: #fff;
       border-radius: 0;
       text-align: center;
@@ -121,23 +122,20 @@
       100% { background-color: #00ffff; color: #000; }
     }
 
-    .message {
-      margin-top: 20px;
-      font-weight: bold;
-      color: green;
-    }
-
-    /* Botão quadrado com animação */
-    @keyframes pulse3D {
-      0% { transform: scale(1); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); }
-      50% { transform: scale(1.02); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); }
-      100% { transform: scale(1); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); }
+    /* Nova animação personalizada para o botão */
+    @keyframes swing {
+      0% { transform: rotate(-5deg); }
+      25% { transform: rotate(5deg); }
+      50% { transform: rotate(-5deg); }
+      75% { transform: rotate(5deg); }
+      100% { transform: rotate(0deg); }
     }
 
     .tutorial-button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
       width: 150px;
       height: 150px;
       font-size: 24px;
@@ -147,17 +145,17 @@
       border: none;
       border-radius: 12px;
       cursor: pointer;
-      animation: pulse3D 2s infinite;
+      animation: swing 2.5s infinite alternate;
       transition: all 0.3s ease;
-      margin: 15px auto 30px auto;
+      margin: 20px auto;
     }
 
     .tutorial-button:hover {
-      transform: scale(1.03);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5) !important;
+      transform: scale(1.03) rotate(1deg);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     }
 
-    /* Mensagem animada com seta 👇 */
+    /* Mensagem com seta animada */
     @keyframes fadeInOut {
       0% { opacity: 0.7; }
       50% { opacity: 1; }
@@ -207,19 +205,17 @@
       <div>📱 <span id="numero-mpesa">+258 852361783</span>
         <button class="copy-button" onclick="copiarTexto('numero-mpesa')">Copiar Número</button>
       </div><br>
-      <!-- Mensagem com seta 👇 posicionada acima do botão -->
+      <!-- Mensagem animada com seta -->
       <div class="tutorial-message">
         1° CLIQUE NO BOTÃO DE TUTORIAL DE PAGAMENTO PARA APRENDER A FAZER O PAGAMENTO CORRETO
       </div>
       <div class="arrow-down">👇</div>
-
-      <div style="font-size: 36px; color: #ff0000;">VALOR: <strong>15 MT</strong> 💵</div>
     </div>
 
-    <!-- Botão "TUTORIAL AQUI" -->
-    <button class="tutorial-button" onclick="window.location.href='tutorial-de-pagamento/'">
-      📘<BR>TUTORIAL AQUI
-    </button>
+<!-- Botão "TUTORIAL AQUI" com animação swing -->
+<button class="tutorial-button" onclick="window.location.href='tutorial-de-pagamento/index.html'">
+  📘<br>TUTORIAL AQUI
+</button>
 
     <h3 style="font-size: 30px; color: #007bff; font-weight: bold;">💰 Tabela de Preços</h3>
     <table>
