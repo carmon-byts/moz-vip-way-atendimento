@@ -2,134 +2,273 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Tutorial de Pagamento - M-Pesa</title>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <title>📡 PAGAMENTO - MOZ VIP WAY 🇲🇿</title>
   <style>
     body {
-      font-family: 'Ubuntu', sans-serif;
       margin: 0;
       padding: 0;
-      color: #000;
-      background: linear-gradient(-45deg, #3a0ca3, #4361ee, #4cc9f0, #00b4d8);
-      background-size: 400% 400%;
-      animation: gradient 15s ease infinite;
+      background-image: url('fundo.webp');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      width: 100vw;
+      font-family: Arial, sans-serif;
+      overflow-y: auto;
+      scroll-behavior: smooth;
     }
 
     .container {
-      width: 100%;
-      max-width: 1100px;
-      background-color: #ffffffee;
-      padding: 60px 50px;
-      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
-      border-radius: 25px;
-      margin: 20px;
+      max-width: 100%;
+      height: auto;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      background: #fff;
+      border-radius: 0;
+      text-align: center;
+      overflow-y: auto;
     }
 
-    h1 {
-      text-align: center;
+    .info-mpesa {
+      font-size: 40px;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #d60000;
+    }
+
+    .info-mpesa span {
+      color: #007bff;
       font-size: 42px;
-      color: #004085;
-      font-weight: 700;
-      margin-bottom: 30px;
-      text-shadow: 1px 1px #ccc;
     }
 
-    p {
+    .copy-button {
+      background-color: #28a745;
+      color: white;
+      padding: 12px 20px;
+      margin-left: 10px;
       font-size: 22px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    h2.pagemento-title {
+      font-size: 55px;
+      color: #d60000;
       font-weight: bold;
-      color: #333;
-      text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px #000;
     }
 
-    ol {
-      font-size: 22px;
-      line-height: 2;
-      color: #212529;
-      padding-left: 30px;
-    }
-
-    li {
-      margin-bottom: 15px;
-    }
-
-    .alert-box {
-      background-color: #fff3cd;
-      border-left: 6px solid #ff9800;
-      padding: 25px;
-      border-radius: 10px;
-      font-size: 18px;
-      color: #e65100;
-      font-weight: bold;
-      margin-top: 40px;
-    }
-
-    .number {
-      font-weight: bold;
-      color: #c62828;
-    }
-
-    .nome {
-      font-weight: bold;
-      color: #2e7d32;
-    }
-
-    .nota {
-      margin-top: 30px;
+    table {
+      margin: 10px auto;
+      border-collapse: collapse;
+      width: 95%;
       font-size: 20px;
-      color: #00695c;
-      font-style: italic;
-      font-weight: bold;
-      text-align: center;
+      border: 2px solid #007bff;
+      animation: tabelaAnimacao 1.2s ease-in-out;
     }
 
-    @media (max-width: 600px) {
-      .container {
-        padding: 30px 20px;
-      }
+    @keyframes tabelaAnimacao {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
 
-      h1 {
-        font-size: 28px;
-      }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 15px;
+      color: #222;
+    }
 
-      p, ol, .nota, .alert-box {
-        font-size: 16px;
-      }
+    th {
+      background-color: #007bff;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    td {
+      background-color: #e6f0ff;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      width: 95%;
+      padding: 25px;
+      margin: 15px 0;
+      border-radius: 8px;
+      border: 2px solid #007bff;
+      font-size: 22px;
+      background-color: #f9f9ff;
+    }
+
+    button.submit {
+      background-color: #28a745;
+      color: white;
+      padding: 35px 70px;
+      border: none;
+      border-radius: 10px;
+      font-size: 28px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 20px;
+      animation: piscarCores 1s infinite;
+    }
+
+    @keyframes piscarCores {
+      0% { background-color: #ffcc00; color: #000; }
+      50% { background-color: #ff00ff; color: #fff; }
+      100% { background-color: #00ffff; color: #000; }
+    }
+
+    /* Nova animação personalizada para o botão */
+    @keyframes swing {
+      0% { transform: rotate(-5deg); }
+      25% { transform: rotate(5deg); }
+      50% { transform: rotate(-5deg); }
+      75% { transform: rotate(5deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .tutorial-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 150px;
+      height: 150px;
+      font-size: 24px;
+      font-weight: bold;
+      background: linear-gradient(145deg, #fff, #ffcc00);
+      color: #000;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      animation: swing 2.5s infinite alternate;
+      transition: all 0.3s ease;
+      margin: 20px auto;
+    }
+
+    .tutorial-button:hover {
+      transform: scale(1.03) rotate(1deg);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Mensagem com seta animada */
+    @keyframes fadeInOut {
+      0% { opacity: 0.7; }
+      50% { opacity: 1; }
+      100% { opacity: 0.7; }
+    }
+
+    .tutorial-message {
+      font-size: 32px;
+      font-weight: bold;
+      color: #ff0000;
+      display: block;
+      width: 95%;
+      margin: 20px auto;
+      text-align: center;
+      animation: fadeInOut 2s infinite;
+    }
+
+    .arrow-down {
+      font-size: 40px;
+      color: #ff0000;
+      display: block;
+      margin: 5px auto;
+      text-align: center;
+      animation: fadeInOut 2s infinite;
+    }
+
+    #screenshot-message {
+      font-size: 38px;
+      font-weight: bold;
+      color: #007bff;
+      text-transform: uppercase;
+      margin-top: 20px;
+      padding: 30px;
+      border-radius: 12px;
+      display: block;
+      width: 95%;
+      margin: 20px auto;
+      text-align: center;
+      box-shadow: 0 0 15px #007bff;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Tutorial de Pagamento - M-Pesa</h1>
-    <p>Siga os passos abaixo para efetuar o pagamento corretamente:</p>
-
-    <ol>
-      <li>Acesse o menu do seu telefone e abra o aplicativo <strong>M-Pesa</strong>.</li>
-      <li>Selecione a opção <strong>Transferir Dinheiro (15 MT)</strong>.</li>
-      <li>Digite o número <span class="number">852361783</span>.</li>
-      <li>Confirme se o nome do titular aparece como <span class="nome">CARMÓNIO</span>.</li>
-      <li>Insira o valor exato indicado no site.</li>
-      <li>Confirme o pagamento digitando seu PIN M-Pesa.</li>
-      <li>Após o pagamento, aguarde o envio automático do arquivo no seu WhatsApp.</li>
-    </ol>
-
-    <div class="nota">
-      Nota: depois do pagamento você receberá um arquivo rápido e seguro sem falhas.
+  <div class="container" id="pagamento">
+    <h2 class="pagemento-title">📡 PAGAMENTO VIA M-PESA 📡</h2>
+    <div class="info-mpesa">
+      <div>📱 <span id="numero-mpesa">+258 852361783</span>
+        <button class="copy-button" onclick="copiarTexto('numero-mpesa')">Copiar Número</button>
+      </div><br>
+      <!-- Mensagem animada com seta -->
+      <div class="tutorial-message">
+        1° CLIQUE NO BOTÃO DE TUTORIAL DE PAGAMENTO PARA APRENDER A FAZER O PAGAMENTO CORRETO
+      </div>
+      <div class="arrow-down">👇</div>
     </div>
 
-    <div class="alert-box">
-      ⚠️ NÃO ESQUEÇA DE ENVIAR FOTO DE CONFIRMAÇÃO DE PAGAMENTO, JUNTO COM SEUS DADOS NO BOTÃO DE SOLICITAR SEU ARQUIVO 📂 ⚠️
-    </div>
+    <!-- Botão "TUTORIAL AQUI" com animação swing -->
+    <button class="tutorial-button" onclick="window.location.href='tutorial-de-pagamento/'">
+      📘<BR>TUTORIAL AQUI
+    </button>
+
+    <h3 style="font-size: 30px; color: #007bff; font-weight: bold;">💰 Tabela de Preços</h3>
+    <table>
+      <tr><th>🛡️ VPN</th><th>💸 Preço</th></tr>
+      <tr><td>🔐 Http Custom</td><td>15 MT</td></tr>
+      <tr><td>⚙️ Http Injector Lite</td><td>15 MT</td></tr>
+      <tr><td>🛰️ Http Injector</td><td>15 MT</td></tr>
+      <tr><td>🔌 Linklayer</td><td>15 MT</td></tr>
+      <tr><td>🌐 Wry</td><td>15 MT</td></tr>
+      <tr><td>🚀 Bink Tunnel</td><td>15 MT</td></tr>
+      <tr><td>📡 Aio Tunnel</td><td>15 MT</td></tr>
+      <tr><td>🔒 TLS Tunnel</td><td>15 MT</td></tr>
+      <tr><td>🛡️ ESET</td><td>15 MT</td></tr>
+    </table>
+
+    <form id="paymentForm">
+      <input type="text" id="name" placeholder="✍️ Seu nome" required>
+      <input type="text" id="phone" placeholder="📞 Seu número de WhatsApp" required>
+      <select id="vpnType" required>
+        <option value="" disabled selected>📂 Selecione o tipo de VPN</option>
+        <option>Http Custom</option>
+        <option>Http Injector Lite</option>
+        <option>TLS Tunnel</option>
+        <option>Linklayer</option>
+        <option>Http Injector</option>
+        <option>ESET</option>
+        <option>Http Injector</option>
+        <option>Linklayer</option>
+        <option>Wry</option>
+        <option>Bink Tunnel</option>
+        <option>Aio Tunnel</option>
+      </select>
+      <button type="submit" class="submit">📤 SOLICITAR SEU ARQUIVO NO WATSAPP</button>
+    </form>
+    <div class="message" id="statusMessage"></div>
   </div>
+
+  <script>
+    function copiarTexto(id) {
+      const texto = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(texto);
+      alert("Copiado: " + texto);
+    }
+
+    document.getElementById("paymentForm").onsubmit = function(event) {
+      event.preventDefault();
+      let nome = document.getElementById("name").value;
+      let phone = document.getElementById("phone").value;
+      let tipo = document.getElementById("vpnType").value;
+      let texto = `✅ Pagamento confirmado por ${nome}. WhatsApp do cliente: ${phone}. Solicitou: ${tipo}`;
+      let linkWhatsApp = `https://wa.me/258852361783?text=${encodeURIComponent(texto)}`;
+      window.open(linkWhatsApp, '_blank');
+    };
+  </script>
 </body>
 </html>
