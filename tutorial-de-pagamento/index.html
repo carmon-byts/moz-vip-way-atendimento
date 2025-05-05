@@ -182,16 +182,6 @@
         font-size: 18px;
       }
     }
-
-    /* Rodapé */
-    footer {
-      text-align: center;
-      padding: 15px;
-      background-color: #000;
-      color: #ff0000;
-      font-weight: bold;
-      font-size: 16px;
-    }
   </style>
 </head>
 <body>
@@ -224,14 +214,14 @@
   <!-- Pop-up de alerta -->
   <div class="popup" id="popup">
     <p>Por favor, copie o número <strong>852361783</strong> antes de continuar.</p>
-    <button onclick="copyNumber()">Copiar Número</button>
-    <button onclick="closePopup()">Fechar</button>
+    <button onclick="copyNumber()" class="copy-btn">Copiar Número</button>
+    <button onclick="closePopup()" class="copy-btn" style="background:#c62828;">Fechar</button>
   </div>
 
-  <!-- Rodapé -->
-  <footer>
-    ⚠️A SUA SEGURANÇA E FELICIDADE É A MINHA PRIORIDADE ⚠️
-  </footer>
+  <!-- Mensagem no final da página -->
+  <div style="text-align: center; margin: 40px auto 20px; color: red; font-weight: bold; font-size: 18px;">
+    ⚠️ A SUA SEGURANÇA E FELICIDADE É A NOSSA PRIORIDADE ⚠️
+  </div>
 
   <script>
     let numberCopied = false;
@@ -252,12 +242,12 @@
     }
 
     function copyNumber() {
-      const number = "852361783";  // Número a ser copiado
+      const number = "852361783";
       navigator.clipboard.writeText(number).then(() => {
-        alert('Número copiado: ' + number);
         numberCopied = true;
         enableButtons();
         closePopup();
+        alert('Número copiado com sucesso!');
       });
     }
 
