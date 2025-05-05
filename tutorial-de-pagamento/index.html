@@ -15,14 +15,13 @@
     body {
       font-family: 'Ubuntu', sans-serif;
       background: linear-gradient(135deg, #1a237e, #64b5f6);
-      margin: 0;
-      padding: 0;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: #000;
+      color: #fff;
+      overflow-x: hidden;
     }
 
     .container {
@@ -34,6 +33,8 @@
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
       border-radius: 20px;
       text-align: center;
+      color: #000;
+      z-index: 1;
     }
 
     h1 {
@@ -52,12 +53,12 @@
       background-color: #0d47a1;
       color: white;
       border: none;
-      padding: 8px 18px;
-      margin-left: 10px;
-      font-size: 16px;
+      padding: 10px 20px;
+      font-size: 18px;
       border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      margin-top: 10px;
     }
 
     .copy-btn:hover {
@@ -69,8 +70,8 @@
       width: 100%;
       max-width: 400px;
       text-align: center;
-      padding: 18px 0;
-      font-size: 20px;
+      padding: 20px 0;
+      font-size: 22px;
       background-color: #2e7d32;
       color: white;
       border-radius: 12px;
@@ -141,57 +142,79 @@
       background-color: #1a237e;
     }
 
+    /* Popup estilizado */
     .popup {
       display: none;
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.9);
+      background-color: #000;
       color: white;
-      padding: 25px;
-      border-radius: 10px;
-      font-size: 18px;
+      padding: 40px;
+      width: 450px;
+      border-radius: 15px;
+      font-size: 20px;
       text-align: center;
       z-index: 9999;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-      animation: fadeIn 0.5s ease-out;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
       backdrop-filter: blur(3px);
+      animation: fadeInUp 0.8s ease-out;
     }
 
     .popup.show {
       display: block;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .popup h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #ffeb3b;
+      font-weight: bold;
+    }
+
+    .popup p {
+      font-size: 18px;
+      margin-bottom: 25px;
+      color: white;
     }
 
     .popup button {
-      margin: 15px 10px 0;
-      padding: 10px 20px;
-      font-size: 16px;
+      margin: 10px 5px;
+      padding: 12px 24px;
+      font-size: 18px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
 
-    .popup .copy-btn {
+    .popup .copy-btn-popup {
       background-color: #0d47a1;
     }
 
-    .popup .close-btn {
-      background-color: #c62828;
-    }
-
-    .popup .copy-btn:hover {
+    .popup .copy-btn-popup:hover {
       background-color: #1a237e;
     }
 
-    .popup .close-btn:hover {
+    .popup .close-btn-popup {
+      background-color: #c62828;
+    }
+
+    .popup .close-btn-popup:hover {
       background-color: #9a0000;
     }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
     }
 
     @keyframes pulse {
@@ -215,38 +238,43 @@
     }
 
     @media (max-width: 600px) {
-      h1 {
-        font-size: 28px;
+      .popup {
+        width: 95%;
+        padding: 30px 20px;
       }
 
-      p, .ussd-button {
+      .popup button {
+        width: 48%;
+        margin: 10px 1%;
+      }
+
+      .ussd-button {
         font-size: 18px;
       }
 
       .note-box {
         font-size: 18px;
       }
-
-      .popup {
-        width: 90%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      .popup button {
-        width: 48%;
-        margin: 15px 1%;
-      }
     }
   </style>
 </head>
 <body>
+
+  <!-- Pop-up de alerta (aparece ao carregar a página) -->
+  <div class="popup show" id="popup">
+    <h2>⚠️ AVISO IMPORTANTE ⚠️</h2>
+    <p>Antes de continuar, por favor copie o número de pagamento para garantir que está correto:</p>
+    <strong style="font-size: 20px; color: #ffeb3b;">+258 852361783</strong><br><br>
+    <button onclick="copyNumber()" class="copy-btn copy-btn-popup">Copiar Número 📋</button>
+    <button onclick="closePopup()" class="close-btn-popup">Fechar ❌</button>
+  </div>
+
   <div class="container">
     <h1>Pagamento Rápido via M-Pesa</h1>
     <p>Clique no botão abaixo para abrir o app de chamadas com o código M-Pesa já preenchido:</p>
 
     <a href="tel:*150*1*1*852361783*15%23" class="ussd-button" id="mpesa-btn" onclick="checkNumberCopied(event)">
-      Transferir 15 MT para CARMÓNIO via M-Pesa
+      📱 Transferir 15 MT para CARMÓNIO via M-Pesa
     </a>
 
     <div class="info">
@@ -266,20 +294,13 @@
       📡 FALAR COM ADM
     </a>
 
-    <!-- Botão para transferência via E-Mola -->
+    <!-- Botão E-MOLA -->
     <a href="tel:*150*2*1*852361783*15%23" class="ussd-button" id="emola-btn" onclick="checkNumberCopied(event)">
-      Transferir 15 MT para CARMÓNIO via E-MOLA
+      📱 Transferir 15 MT para CARMÓNIO via E-MOLA
     </a>
   </div>
 
-  <!-- Pop-up de alerta -->
-  <div class="popup" id="popup">
-    <p>⚠️ Por favor, copie o número <strong>852361783</strong> antes de continuar.</p>
-    <button onclick="copyNumber()" class="copy-btn">Copiar Número</button>
-    <button onclick="closePopup()" class="copy-btn close-btn">Fechar</button>
-  </div>
-
-  <!-- Mensagem no final da tela -->
+  <!-- Mensagem final -->
   <div class="footer-alert">
     ⚠️ A SUA SEGURANÇA E FELICIDADE É A NOSSA PRIORIDADE ⚠️
   </div>
@@ -287,19 +308,26 @@
   <script>
     let numberCopied = false;
 
+    // Função para mostrar o popup ao carregar a página
+    window.addEventListener('load', () => {
+      if (!numberCopied) {
+        document.getElementById('popup').classList.add('show');
+      }
+    });
+
     function checkNumberCopied(event) {
       if (!numberCopied) {
         event.preventDefault();
-        showPopup();
+        document.getElementById('popup').classList.add('show');
       }
     }
 
-    function showPopup() {
-      document.getElementById('popup').classList.add('show');
-    }
-
     function closePopup() {
-      document.getElementById('popup').classList.remove('show');
+      if (!numberCopied) {
+        alert("⚠️ Copie o número para continuar.");
+      } else {
+        document.getElementById('popup').classList.remove('show');
+      }
     }
 
     function copyNumber() {
@@ -307,7 +335,7 @@
       navigator.clipboard.writeText(number).then(() => {
         numberCopied = true;
         enableButtons();
-        closePopup();
+        document.getElementById('popup').classList.remove('show');
         alert("✅ Número copiado: " + number);
       }).catch(() => {
         alert("❌ Falha ao copiar número");
