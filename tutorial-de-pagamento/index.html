@@ -14,7 +14,7 @@
     }
 
     .container {
-      max-width: 800px;
+      max-width: 1200px;
       margin: 50px auto;
       background-color: #ffffff;
       padding: 50px 40px;
@@ -35,6 +35,29 @@
       margin-bottom: 40px;
     }
 
+    .number-top {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .copy-btn {
+      background-color: #0d47a1;
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      margin-left: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      background-color: #1a237e;
+    }
+
     .ussd-button {
       display: block;
       width: 100%;
@@ -48,6 +71,7 @@
       font-weight: bold;
       box-shadow: 0 10px 20px rgba(0,0,0,0.2);
       transition: background 0.3s ease;
+      animation: pulse 2s infinite;
     }
 
     .ussd-button:hover {
@@ -71,6 +95,20 @@
       border-radius: 8px;
     }
 
+    .note-box {
+      margin-top: 30px;
+      background: linear-gradient(90deg, #f44336, #e91e63, #9c27b0, #673ab7);
+      background-size: 300% 300%;
+      animation: glow 5s ease infinite;
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 20px;
+      text-align: center;
+      border-radius: 12px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    }
+
     .call-button {
       display: inline-block;
       background-color: #0d47a1;
@@ -82,10 +120,23 @@
       text-decoration: none;
       margin-top: 20px;
       transition: background-color 0.3s ease;
+      animation: pulse 2s infinite;
     }
 
     .call-button:hover {
       background-color: #1a237e;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes glow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     @media (max-width: 600px) {
@@ -101,6 +152,11 @@
 </head>
 <body>
   <div class="container">
+    <div class="number-top">
+      Número M-Pesa: <span id="mpesa-number">+258 852361783</span>
+      <button class="copy-btn" onclick="copyNumber()">Copiar</button>
+    </div>
+
     <h1>Pagamento Rápido via M-Pesa</h1>
     <p>Clique no botão abaixo para abrir o app de chamadas com o código M-Pesa já preenchido:</p>
 
@@ -110,13 +166,26 @@
       Verifique se aparece o nome <strong>CARMÓNIO</strong> antes de confirmar o pagamento.
     </div>
 
-    <!-- Alerta de confirmação de pagamento -->
     <div class="alert-box">
       ⚠️ NÃO ESQUEÇA DE ENVIAR FOTO DE CONFIRMAÇÃO DE PAGAMENTO, JUNTO COM SEUS DETALHES.
     </div>
 
-    <!-- Botão para acessar a página de pagamento -->
-    <a href="pagina-de-pagamento/pagina-de-pagamento.html" class="call-button">Ir para Página de Pagamento</a>
+    <div class="note-box">
+      DEPOIS DE PAGARES, RECEBERÁS UM ARQUIVO 📂 RÁPIDO E SEGURO 🔐 SEM FALHAS. <br><br>
+      ⭕ O PAGAMENTO É 100% MANUAL ⭕
+
+    </div>
+
+    <a href="https://wa.me/258852361783" class="call-button" target="_blank">📡FALAR COM ADM</a>
   </div>
+
+  <script>
+    function copyNumber() {
+      const number = document.getElementById('mpesa-number').innerText;
+      navigator.clipboard.writeText(number).then(() => {
+        alert('Número copiado: ' + number);
+      });
+    }
+  </script>
 </body>
 </html>
