@@ -5,65 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🇲🇿 MOZ VIP WAY 🇲🇿</title>
   <style>
-    /* Reset e configuração básica */
-    * {
-      box-sizing: border-box;
+    body {
       margin: 0;
       padding: 0;
-    }
-
-    html, body {
-      height: 100%;
-      width: 100%;
-      font-family: Arial, sans-serif;
-      overflow-x: hidden;
-    }
-
-    body {
       background-image: url('fundo.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-attachment: fixed;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
+      min-height: 90vh;
+      width: 95vw;
+      font-family: Arial, sans-serif;
+      overflow-y: auto;
     }
 
-    /* Tela principal */
     .welcome-screen {
       background-image: url('bg-mozvip.webp');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
+      min-height: 95vh;
       width: 100vw;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      color: white;
       text-align: center;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       position: relative;
-      animation: fadeIn 1s ease-out;
     }
 
-    /* Animação de entrada suave */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* Estilização do título */
     .welcome-screen h1 {
-      font-size: 8vw;
+      font-size: 6rem;
       font-weight: bold;
-      margin-bottom: 1vw;
-      margin-top: -15vw;
+      margin-bottom: 10px;
+      margin-top: -150px;
       color: white;
       text-transform: uppercase;
-      letter-spacing: 0.4vw;
+      letter-spacing: 4px;
       animation: brilhoAnimado 2s infinite alternate;
     }
 
@@ -73,27 +50,29 @@
       100% { text-shadow: 0 0 30px #ffff00, 0 0 50px #ffff00, 0 0 70px #ffff00; }
     }
 
-    /* Assinatura */
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
     .assinatura {
       font-family: 'Pacifico', cursive;
-      font-size: 4vw;
+      font-size: 3rem;
       font-weight: bold;
       color: #00aaff;
       text-shadow: 2px 2px 0 #003366, 4px 4px 10px rgba(0, 0, 0, 0.5);
-      margin-top: 10vw;
-      margin-bottom: 2vw;
+      margin-top: 100px;
+      margin-bottom: 10px;
     }
 
-    /* Banner de promoção */
     .promo-banner {
-      font-size: 3vw;
+      font-size: 2.5rem;
       font-weight: bold;
       color: #ff4500;
       background-color: transparent;
-      padding: 1.5vw 3vw;
-      border-radius: 1.2vw;
+      padding: 15px 30px;
+      border-radius: 12px;
+      margin-top: 10px;
       animation: pulse 1.5s infinite;
       display: inline-block;
+      white-space: nowrap;
     }
 
     @keyframes pulse {
@@ -102,34 +81,32 @@
       100% { transform: scale(1); }
     }
 
-    /* Subtítulo */
     .welcome-screen h2 {
-      font-size: 4vw;
+      font-size: 3.2rem;
       color: #00f0ff;
       font-weight: bold;
-      margin-top: 10vw;
-      margin-bottom: 2vw;
+      margin-top: 100px;
+      margin-bottom: 0;
       text-shadow: -2px -2px 2px #66ffff, 2px 2px 2px #003344;
-      border-left: 0.6vw solid #00f0ff;
-      border-right: 0.6vw solid #00f0ff;
-      padding: 1.5vw 2.5vw;
-      border-radius: 1vw;
+      border-left: 6px solid #00f0ff;
+      border-right: 6px solid #00f0ff;
+      padding: 15px 25px;
+      border-radius: 10px;
       animation: pulseEffect 1.8s infinite;
     }
 
     @keyframes pulseEffect {
       0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.02); opacity: 0.85; }
+      50% { transform: scale(1.05); opacity: 0.85; }
       100% { transform: scale(1); opacity: 1; }
     }
 
-    /* Botões principais */
     .welcome-buttons {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 4vw;
-      margin-top: 10vw;
+      gap: 20px;
+      margin-top: 300px;
     }
 
     @keyframes purpleGlow {
@@ -140,50 +117,47 @@
 
     .button-3d {
       background: linear-gradient(145deg, #fff, #ddd);
-      box-shadow: 
-        0 0.8vw 1.6vw rgba(0, 0, 0, 0.3),
-        inset 0 0.1vw 0 rgba(255, 255, 255, 0.5),
-        inset 0 -0.1vw 0 rgba(0, 0, 0, 0.3);
+      box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.3),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.5),
+                  inset 0 -1px 0 rgba(0, 0, 0, 0.3);
       color: #000;
       font-weight: bold;
-      font-size: 2.8vw;
-      padding: 3.5vw 7vw;
+      font-size: 28px;
+      padding: 35px 70px;
       border: none;
-      border-radius: 1.2vw;
+      border-radius: 12px;
       cursor: pointer;
       transition: all 0.3s ease;
       animation: purpleGlow 3s infinite;
-      will-change: transform;
+      position: relative;
+      z-index: 1;
     }
 
     .button-3d:hover {
       background: linear-gradient(145deg, #f8f8f8, #ccc);
-      box-shadow: 
-        0 1vw 2vw rgba(0, 0, 0, 0.4),
-        inset 0 0.2vw 0.4vw rgba(255, 255, 255, 0.6),
-        inset 0 -0.2vw 0.4vw rgba(0, 0, 0, 0.4);
+      box-shadow: 0 10px 20px -4px rgba(0, 0, 0, 0.4),
+                  inset 0 2px 4px rgba(255, 255, 255, 0.6),
+                  inset 0 -2px 4px rgba(0, 0, 0, 0.4);
       transform: scale(1.03);
     }
 
-    /* Contador online */
     .online-counter {
       position: fixed;
-      top: 1vw;
-      right: 1.5vw;
+      top: 10px;
+      right: 15px;
       background: linear-gradient(145deg, #222, #444);
       color: #0f0;
-      padding: 1vw 1.8vw;
-      border-radius: 2vw;
-      font-size: 1.6vw;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-size: 16px;
       font-weight: bold;
       display: inline-flex;
       align-items: center;
-      gap: 1vw;
-      box-shadow: 0 0 1.2vw #0f0;
+      gap: 10px;
+      box-shadow: 0 0 12px #0f0;
       z-index: 999;
     }
 
-    /* Rodapé com links úteis */
     .footer-buttons {
       position: fixed;
       bottom: 0;
@@ -193,126 +167,79 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 -0.2vw 1vw rgba(0, 0, 0, 0.2);
+      background-color: transparent;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
       z-index: 999;
-      padding: 2vw 0;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      padding: 20px 0;
     }
 
     .grupo-button, .config-button, .telegram-button {
       background: linear-gradient(145deg, #007bff, #0056b3);
       color: white;
       font-weight: bold;
-      font-size: 2.2vw;
-      padding: 0.5vw 3vw;
-      border-radius: 1.2vw;
-      margin: 0.5vw 1vw;
+      font-size: 22px;
+      padding: 5px 30px;
+      border-radius: 12px;
+      margin: 5px 10px;
+      cursor: pointer;
       border: none;
-      box-shadow: 
-        0 0.4vw 0.8vw rgba(0, 0, 0, 0.4),
-        inset 0 0.1vw 0 rgba(255, 255, 255, 0.3),
-        inset 0 -0.1vw 0 rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                  inset 0 -1px 0 rgba(0, 0, 0, 0.3);
       transition: all 0.3s ease;
     }
 
     .grupo-button:hover, .config-button:hover, .telegram-button:hover {
       background: linear-gradient(145deg, #0056b3, #003f7f);
-      box-shadow: 
-        0 0.6vw 1.2vw rgba(0, 0, 0, 0.5),
-        inset 0 0.2vw 0.4vw rgba(255, 255, 255, 0.5),
-        inset 0 -0.2vw 0.4vw rgba(0, 0, 0, 0.5);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5),
+                  inset 0 2px 4px rgba(255, 255, 255, 0.5),
+                  inset 0 -2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .footer-buttons h3 {
-      font-size: 2.8vw;
+      font-size: 28px;
       color: yellow;
-      margin-bottom: 1vw;
+      margin-bottom: 10px;
       font-weight: bold;
     }
 
     .footer-buttons p {
-      font-size: 3vw;
+      font-size: 30px;
       font-weight: bold;
       color: red;
-      margin-top: 1vw;
+      margin-top: 10px;
       text-align: center;
-      background: none;
-      text-shadow: none;
     }
 
-    /* Responsividade para telas pequenas e zoom */
     @media (max-width: 600px) {
-      .welcome-screen h1 {
-        font-size: 28px;
-        margin-top: -100px;
-      }
-
-      .welcome-screen h2 {
-        font-size: 18px;
-      }
-
-      .assinatura {
-        font-size: 16px;
-        margin-top: 20px;
-      }
-
-      .promo-banner {
-        font-size: 16px;
-        padding: 10px 20px;
-      }
-
-      .welcome-buttons {
-        margin-top: 150px;
-        gap: 20px;
-      }
-
-      .button-3d {
-        font-size: 16px;
-        padding: 20px 40px;
-      }
-
-      .online-counter {
-        right: 10px;
-        font-size: 14px;
-      }
-
-      .footer-buttons {
-        padding: 15px 0;
-      }
-
-      .grupo-button, .config-button, .telegram-button {
-        font-size: 16px;
-        padding: 5px 20px;
-      }
-
-      .footer-buttons p {
-        font-size: 16px;
-      }
+      .welcome-screen h1 { font-size: 3rem; margin-top: -100px; }
+      .welcome-screen h2 { font-size: 1.8rem; }
+      .promo-banner { font-size: 1.5rem; padding: 10px 20px; }
+      .welcome-buttons { margin-top: 150px; }
+      .button-3d { padding: 20px 50px; font-size: 20px; }
+      .online-counter { right: 10px; font-size: 14px; }
+      .footer-buttons { padding: 15px 0; }
+      .grupo-button, .config-button, .telegram-button { font-size: 18px; padding: 5px 20px; }
     }
   </style>
 </head>
 <body>
-  <div class="welcome-screen">
-    <!-- Contador de usuários online -->
+  <div class="welcome-screen" id="welcome">
     <div class="online-counter">
       <span>🟢</span>
       <span id="online-number">0</span> online
     </div>
-
-    <!-- Cabeçalho -->
     <h1>🇲🇿 MOZ VIP WAY 🇲🇿</h1>
     <div class="assinatura">@carmon.oficial</div>
     <div class="promo-banner">🔥 PROMOÇÃO ÚNICA 🔥</div>
     <h2>📡 BEM VINDO/A NO SITE OFICIAL DE VENDAS DE ARQUIVOS PARA VPN'S 📡</h2>
 
-    <!-- Botões principais -->
     <div class="welcome-buttons">
       <button class="button-3d" onclick="window.location.href='pagina-de-atendimento/index.html'">🛒 IR NA LOJA DE WAYS</button>
       <button class="button-3d" onclick="window.location.href='mailto:aldamiguelrafael@gmail.com?subject=Opinião%20sobre%20o%20site%20MOZ%20VIP%20WAY'">✍️ RECLAMAR & OPINIÃO</button>
       <button class="button-3d" onclick="window.location.href='ways-gratis/index.html'">🎁 SURPRESAS E OUTOS WAYS GRÁTIS</button>
     </div>
 
-    <!-- Rodapé -->
     <div class="footer-buttons">
       <h3>🔗 Links Úteis:</h3>
       <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
@@ -320,16 +247,25 @@
         <button class="config-button" onclick="window.open('https://wa.link/7np01p', '_blank')">🔒 Configuração Privada</button>
         <button class="telegram-button" onclick="window.open('https://t.me/+7G8ve13KFRhjMjQ8', '_blank')">📢 Canal de Telegram</button>
       </div>
-      <p style="margin-top: 15px;">⚠️ <span style="font-size: 34px;">A sua segurança é a minha prioridade</span> ⚠️</p>
+      <p>⚠️ <span style="font-size: 34px;">A sua segurança é a minha prioridade</span> ⚠️</p>
     </div>
   </div>
 
   <script>
-    // Atualiza o contador online a cada 4 segundos
+    // Número aleatório de usuários online
     setInterval(() => {
       const numeroAleatorio = Math.floor(Math.random() * 79);
       document.getElementById("online-number").textContent = numeroAleatorio;
     }, 4000);
+
+    // Exibir página após carregar a imagem de fundo
+    window.onload = () => {
+      const bgImage = new Image();
+      bgImage.src = 'bg-mozvip.webp';
+      bgImage.onload = () => {
+        document.getElementById("welcome").style.display = "flex";
+      };
+    };
   </script>
 </body>
 </html>
