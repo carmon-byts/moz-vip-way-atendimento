@@ -173,12 +173,6 @@
       100% { background-position: 0% 50%; }
     }
 
-    @keyframes pulseText {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-
     @media (max-width: 600px) {
       h1 {
         font-size: 28px;
@@ -187,6 +181,16 @@
       p, .ussd-button {
         font-size: 18px;
       }
+    }
+
+    /* Rodapé */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #000;
+      color: #ff0000;
+      font-weight: bold;
+      font-size: 16px;
     }
   </style>
 </head>
@@ -219,9 +223,15 @@
 
   <!-- Pop-up de alerta -->
   <div class="popup" id="popup">
-    <p>Por favor, copie o número primeiro antes de continuar.</p>
+    <p>Por favor, copie o número <strong>852361783</strong> antes de continuar.</p>
+    <button onclick="copyNumber()">Copiar Número</button>
     <button onclick="closePopup()">Fechar</button>
   </div>
+
+  <!-- Rodapé -->
+  <footer>
+    ⚠️A SUA SEGURANÇA E FELICIDADE É A MINHA PRIORIDADE ⚠️
+  </footer>
 
   <script>
     let numberCopied = false;
@@ -241,18 +251,19 @@
       document.getElementById('popup').classList.remove('show');
     }
 
-    function enableButtons() {
-      document.getElementById('mpesa-btn').classList.add('active');
-      document.getElementById('emola-btn').classList.add('active');
-    }
-
     function copyNumber() {
-      const number = document.getElementById('mpesa-number').innerText;
+      const number = "852361783";  // Número a ser copiado
       navigator.clipboard.writeText(number).then(() => {
         alert('Número copiado: ' + number);
         numberCopied = true;
         enableButtons();
+        closePopup();
       });
+    }
+
+    function enableButtons() {
+      document.getElementById('mpesa-btn').classList.add('active');
+      document.getElementById('emola-btn').classList.add('active');
     }
   </script>
 </body>
