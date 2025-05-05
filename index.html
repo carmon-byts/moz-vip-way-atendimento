@@ -26,7 +26,7 @@
       width: 100vw;
       color: white;
       text-align: center;
-      display: none;
+      display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -252,20 +252,10 @@
   </div>
 
   <script>
-    // Número aleatório de usuários online
     setInterval(() => {
       const numeroAleatorio = Math.floor(Math.random() * 79);
       document.getElementById("online-number").textContent = numeroAleatorio;
     }, 4000);
-
-    // Exibir página após carregar a imagem de fundo
-    window.onload = () => {
-      const bgImage = new Image();
-      bgImage.src = 'bg-mozvip.webp';
-      bgImage.onload = () => {
-        document.getElementById("welcome").style.display = "flex";
-      };
-    };
   </script>
 </body>
 </html>
