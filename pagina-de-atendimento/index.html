@@ -22,7 +22,7 @@
       max-width: 100%;
       min-height: 100vh;
       margin: 0;
-      padding: 10px 20px; /* Reduzido para fechar espaçamentos */
+      padding: 20px 20px;
       background: #fff;
       border-radius: 0;
       text-align: center;
@@ -32,7 +32,7 @@
     .info-mpesa {
       font-size: 40px;
       font-weight: bold;
-      margin: 15px 0;
+      margin: 20px 0;
       color: #d60000;
     }
 
@@ -44,16 +44,16 @@
     .copy-button {
       background-color: #28a745;
       color: white;
-      padding: 10px 18px;
+      padding: 12px 20px;
       margin-left: 10px;
-      font-size: 20px;
+      font-size: 22px;
       border: none;
       border-radius: 6px;
       cursor: pointer;
     }
 
     h2.pagemento-title {
-      font-size: 50px;
+      font-size: 55px;
       color: #d60000;
       font-weight: bold;
       margin-bottom: 10px;
@@ -102,33 +102,32 @@
       background-color: #f9f9ff;
     }
 
-    /* Nova animação de brilho para o botão "SOLICITAR SEU ARQUIVO NO WATSAPP" */
-    @keyframes shine {
-      0% { background-position: 200% center; opacity: 0.8; }
-      100% { background-position: -200% center; opacity: 0.8; }
+    /* Animação de brilho para o botão "SOLICITAR SEU ARQUIVO NO WATSAPP" */
+    @keyframes glowButton {
+      0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.3); }
+      50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.5); }
+      100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.3); }
     }
 
     button.submit {
-      background: linear-gradient(120deg, #ffcc00, #ff00ff, #00ffff, #ffcc00);
-      background-size: 400% 400%;
-      color: #000;
-      padding: 30px 60px;
+      background-color: #28a745;
+      color: white;
+      padding: 35px 70px;
       border: none;
       border-radius: 10px;
-      font-size: 26px;
+      font-size: 28px;
       cursor: pointer;
       font-weight: bold;
       margin-top: 20px;
-      animation: shine 3s infinite;
-      width: 80%; /* Largura reduzida */
+      animation: glowButton 2s infinite;
       transition: all 0.3s ease;
+      width: 80%;
+      max-width: 500px;
+      display: block;
+      margin: 20px auto;
     }
 
-    button.submit:hover {
-      filter: brightness(1.1);
-    }
-
-    /* Estilo e animação do botão "TUTORIAL AQUI" */
+    /* Estilo e animação do botão TUTORIAL AQUI */
     @keyframes tutorialShine {
       0% { background-position: -200% center; }
       100% { background-position: 200% center; }
@@ -139,23 +138,25 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      width: 200px;
-      height: 130px;
-      font-size: 26px;
+      width: 220px;
+      height: 140px;
+      font-size: 28px;
       font-weight: bold;
-      background: linear-gradient(145deg, #007bff, #0056b3);
+      background: linear-gradient(120deg, #007bff, #005eff, #003fcf);
       color: white;
       border: none;
-      border-radius: 12px;
+      border-radius: 14px;
       cursor: pointer;
       animation: tutorialShine 3s infinite;
+      background-size: 400% 400%;
       transition: all 0.3s ease;
       margin: 25px auto;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     }
 
     .tutorial-button:hover {
       transform: scale(1.03);
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
     }
 
     .tutorial-button::after {
@@ -165,9 +166,18 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: linear-gradient(transparent 25%, rgba(255, 255, 255, 0.3), transparent 75%);
+      background: linear-gradient(
+        transparent 25%,
+        rgba(255, 255, 255, 0.3),
+        transparent 75%
+      );
       transform: rotate(25deg);
       pointer-events: none;
+    }
+
+    .tutorial-button {
+      position: relative;
+      overflow: hidden;
     }
 
     /* Mensagem com seta animada */
@@ -178,18 +188,18 @@
     }
 
     .tutorial-message {
-      font-size: 30px;
+      font-size: 32px;
       font-weight: bold;
       color: #ff0000;
       display: block;
-      width: 90%;
-      margin: 15px auto;
+      width: 95%;
+      margin: 20px auto;
       text-align: center;
       animation: fadeInOut 2s infinite;
     }
 
     .arrow-down {
-      font-size: 36px;
+      font-size: 40px;
       color: #ff0000;
       display: block;
       margin: 5px auto;
@@ -224,17 +234,17 @@
 
       <!-- Mensagem animada com seta -->
       <div class="tutorial-message">
-        1° CLIQUE NO BOTÃO DE TUTORIAL DE PAGAMENTO PARA APRENDER A FAZER O PAGAMENTO CORRETO
+        1° CLIQUE NO BOTÃO ABAIXO  DE PAGAMENTO PARA APRENDER A FAZER O PAGAMENTO CORRETO SEM ERROS
       </div>
       <div class="arrow-down">👇</div>
     </div>
 
-    <!-- Botão "TUTORIAL AQUI" com cor, tamanho e animação atualizados -->
+    <!-- Botão retangular com novo estilo e brilho -->
     <button class="tutorial-button" onclick="window.location.href='../tutorial-de-pagamento/index.html'">
-      📘<BR>TUTORIAL AQUI
+      📘<BR>PAGAMENTO RAPIDO E FACIL AQUI
     </button>
 
-    <h3 style="font-size: 28px; color: #007bff; font-weight: bold;">💰 Tabela de Preços</h3>
+    <h3 style="font-size: 30px; color: #007bff; font-weight: bold;">💰 Tabela de Preços</h3>
     <table>
       <tr><th>🛡️ VPN</th><th>💸 Preço</th></tr>
       <tr><td>🔐 Http Custom</td><td>15 MT</td></tr>
@@ -265,11 +275,9 @@
         <option>Bink Tunnel</option>
         <option>Aio Tunnel</option>
       </select>
-
       <!-- Botão com animação de brilho -->
       <button type="submit" class="submit">📤 SOLICITAR SEU ARQUIVO NO WATSAPP</button>
     </form>
-
     <div class="message" id="statusMessage"></div>
   </div>
 
