@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Tutorial de Pagamento - M-Pesa</title>
+  <title>Pagamento Rápido - M-Pesa</title>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -24,125 +24,99 @@
 
     h1 {
       text-align: center;
-      font-size: 42px;
+      font-size: 38px;
       color: #0d47a1;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .nota {
       margin-bottom: 30px;
-      font-size: 20px;
-      color: #00695c;
-      font-style: italic;
-      font-weight: bold;
-      text-align: center;
     }
 
     p {
-      font-size: 22px;
-      font-weight: bold;
-      color: #333;
-      margin-bottom: 35px;
+      font-size: 20px;
       text-align: center;
+      margin-bottom: 40px;
     }
 
-    ol {
+    .ussd-button {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 18px 0;
       font-size: 20px;
+      background-color: #2e7d32;
+      color: white;
+      border-radius: 12px;
+      text-decoration: none;
       font-weight: bold;
-      line-height: 2;
-      color: #212121;
-      padding-left: 30px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
     }
 
-    li {
-      margin-bottom: 20px;
+    .ussd-button:hover {
+      background-color: #1b5e20;
     }
 
-    .alert-box {
-      background-color: #fff8e1;
-      border-left: 6px solid #ff8f00;
-      padding: 25px;
-      margin-top: 40px;
-      border-radius: 10px;
-      font-size: 20px;
-      color: #e65100;
-      font-weight: bold;
-      box-shadow: 0 0 10px rgba(255, 143, 0, 0.2);
-    }
-
-    .number {
+    .info {
+      margin-top: 20px;
+      text-align: center;
       font-weight: bold;
       color: #c62828;
     }
 
-    .nome {
-      font-weight: bold;
-      color: #2e7d32;
+    .alert-box {
+      background-color: #ffeb3b;
+      color: #d32f2f;
+      padding: 15px;
+      text-align: center;
+      margin-top: 30px;
+      font-size: 18px;
+      border-radius: 8px;
     }
 
     .call-button {
-      display: block;
-      width: 100%;
-      margin-top: 60px;
-      padding: 22px 25px;
-      font-size: 24px;
-      background: linear-gradient(45deg, #ff6f00, #fdd835);
-      color: #000;
+      display: inline-block;
+      background-color: #0d47a1;
+      color: white;
+      padding: 14px 30px;
       text-align: center;
+      font-size: 20px;
+      border-radius: 8px;
       text-decoration: none;
-      border-radius: 15px;
-      font-weight: bold;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-      transition: all 0.4s ease;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
     }
 
     .call-button:hover {
-      background: linear-gradient(45deg, #fdd835, #ff6f00);
-      transform: scale(1.03);
+      background-color: #1a237e;
     }
 
     @media (max-width: 600px) {
-      .container {
-        padding: 30px 20px;
-      }
-
       h1 {
-        font-size: 30px;
+        font-size: 28px;
       }
 
-      p, ol, .nota, .alert-box, .call-button {
+      p, .ussd-button {
         font-size: 18px;
-      }
-
-      .call-button {
-        padding: 18px 20px;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Tutorial de Pagamento - M-Pesa</h1>
-    <div class="nota">
-      Nota: depois do pagamento você receberá um arquivo rápido e seguro sem falhas.
-    </div>
-    <p>Siga os passos abaixo para efetuar o pagamento corretamente:</p>
-    <ol>
-      <li>Acesse o menu do seu telefone e abra o aplicativo <strong>M-Pesa</strong>.</li>
-      <li>Selecione a opção <strong>Transferir Dinheiro (15 MT)</strong>.</li>
-      <li>Digite o número <span class="number">852361783</span>.</li>
-      <li>Confirme se o nome do titular aparece como <span class="nome">CARMÓNIO</span>.</li>
-      <li>Insira o valor exato indicado no site.</li>
-      <li>Confirme o pagamento digitando seu PIN M-Pesa.</li>
-      <li>Após o pagamento, aguarde o envio automático do arquivo no seu WhatsApp.</li>
-    </ol>
+    <h1>Pagamento Rápido via M-Pesa</h1>
+    <p>Clique no botão abaixo para abrir o app de chamadas com o código M-Pesa já preenchido:</p>
 
+    <a href="tel:*150*1*1*852361783*15%23" class="ussd-button">Transferir 15 MT para CARMÓNIO</a>
+
+    <div class="info">
+      Verifique se aparece o nome <strong>CARMÓNIO</strong> antes de confirmar o pagamento.
+    </div>
+
+    <!-- Alerta de confirmação de pagamento -->
     <div class="alert-box">
-      ⚠️ NÃO ESQUEÇA DE ENVIAR FOTO DE CONFIRMAÇÃO DE PAGAMENTO, JUNTO COM SEUS DADOS NO BOTÃO DE SOLICITAR SEU ARQUIVO 📂 ⚠️
+      ⚠️ NÃO ESQUEÇA DE ENVIAR FOTO DE CONFIRMAÇÃO DE PAGAMENTO, JUNTO COM SEUS DETALHES.
     </div>
 
-    <a href="pagina-de-pagamento/pagina-de-pagamento.html" class="call-button">PAGAR FÁCIL E RÁPIDO</a>
+    <!-- Botão para acessar a página de pagamento -->
+    <a href="pagina-de-pagamento/pagina-de-pagamento.html" class="call-button">Ir para Página de Pagamento</a>
   </div>
 </body>
 </html>
