@@ -40,14 +40,6 @@
       margin-bottom: 40px;
     }
 
-    .number-top {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 28px;
-      font-weight: bold;
-      animation: pulseText 2s infinite;
-    }
-
     .copy-btn {
       background-color: #0d47a1;
       color: white;
@@ -200,11 +192,6 @@
 </head>
 <body>
   <div class="container">
-    <div class="number-top">
-      PRIMEIRO COPIA O NÚMERO: <span id="mpesa-number">852361783</span>
-      <button class="copy-btn" onclick="copyNumber()">Copiar</button>
-    </div>
-
     <h1>Pagamento Rápido via M-Pesa</h1>
     <p>Clique no botão abaixo para abrir o app de chamadas com o código M-Pesa já preenchido:</p>
 
@@ -228,7 +215,6 @@
 
     <!-- Novo botão para usuários E-MOLA -->
     <a href="tel:*150*2*1*852361783*15%23" class="ussd-button" id="emola-btn" onclick="checkNumberCopied(event)">Transferir 15 MT para CARMÓNIO via E-MOLA</a>
-
   </div>
 
   <!-- Pop-up de alerta -->
@@ -239,20 +225,6 @@
 
   <script>
     let numberCopied = false;
-
-    function copyNumber() {
-      const number = document.getElementById('mpesa-number').innerText;
-      navigator.clipboard.writeText(number).then(() => {
-        alert('Número copiado: ' + number);
-        numberCopied = true;
-        enableButtons(); // Habilita os botões após copiar
-      });
-    }
-
-    function enableButtons() {
-      document.getElementById('mpesa-btn').classList.add('active');
-      document.getElementById('emola-btn').classList.add('active');
-    }
 
     function checkNumberCopied(event) {
       if (!numberCopied) {
@@ -267,6 +239,20 @@
 
     function closePopup() {
       document.getElementById('popup').classList.remove('show');
+    }
+
+    function enableButtons() {
+      document.getElementById('mpesa-btn').classList.add('active');
+      document.getElementById('emola-btn').classList.add('active');
+    }
+
+    function copyNumber() {
+      const number = document.getElementById('mpesa-number').innerText;
+      navigator.clipboard.writeText(number).then(() => {
+        alert('Número copiado: ' + number);
+        numberCopied = true;
+        enableButtons();
+      });
     }
   </script>
 </body>
