@@ -118,12 +118,13 @@
       margin-top: 300px;
     }
 
-    /* Estilo 3D dos botões */
+    /* Estilo 3D dos botões com animação de brilho */
     .button-3d {
       background: linear-gradient(145deg, #fff, #ddd);
-      box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.3),
-                  inset 0 1px 0 rgba(255, 255, 255, 0.5),
-                  inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+      box-shadow: 
+        0 8px 16px -4px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.3);
       color: #000;
       font-weight: bold;
       font-size: 28px;
@@ -132,13 +133,48 @@
       border-radius: 12px;
       cursor: pointer;
       transition: all 0.3s ease;
+      animation: brilho 2s infinite;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .button-3d::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        transparent 25%,
+        rgba(255, 255, 255, 0.2),
+        transparent 75%
+      );
+      transform: rotate(25deg);
+      pointer-events: none;
+    }
+
+    @keyframes brilho {
+      0%, 100% {
+        box-shadow: 
+          0 8px 16px -4px rgba(0, 0, 0, 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 0.5),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+      }
+      50% {
+        box-shadow: 
+          0 12px 24px -4px rgba(255, 255, 255, 0.6),
+          inset 0 2px 0 rgba(255, 255, 255, 0.7),
+          inset 0 -2px 0 rgba(0, 0, 0, 0.4);
+      }
     }
 
     .button-3d:hover {
       background: linear-gradient(145deg, #f8f8f8, #ccc);
-      box-shadow: 0 10px 20px -4px rgba(0, 0, 0, 0.4),
-                  inset 0 2px 4px rgba(255, 255, 255, 0.6),
-                  inset 0 -2px 4px rgba(0, 0, 0, 0.4);
+      box-shadow: 
+        0 10px 20px -4px rgba(0, 0, 0, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.6),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.4);
       transform: scale(1.03);
     }
 
@@ -189,17 +225,19 @@
       margin: 5px 10px;
       cursor: pointer;
       border: none;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4),
-                  inset 0 1px 0 rgba(255, 255, 255, 0.3),
-                  inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+      box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.3);
       transition: all 0.3s ease;
     }
 
     .grupo-button:hover, .config-button:hover, .telegram-button:hover {
       background: linear-gradient(145deg, #0056b3, #003f7f);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5),
-                  inset 0 2px 4px rgba(255, 255, 255, 0.5),
-                  inset 0 -2px 4px rgba(0, 0, 0, 0.5);
+      box-shadow: 
+        0 6px 12px rgba(0, 0, 0, 0.5),
+        inset 0 2px 4px rgba(255, 255, 255, 0.5),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .footer-buttons h3 {
@@ -222,7 +260,7 @@
 </head>
 <body>
   <div class="welcome-screen" id="welcome">
-    <!-- Contador de usuários online (posição no topo à direita) -->
+    <!-- Contador de usuários online -->
     <div class="online-counter">
       <span>🟢</span>
       <span id="online-number">0</span> online
@@ -234,14 +272,10 @@
     <h2>📡 BEM VINDO/A NO SITE OFICIAL DE VENDAS DE ARQUIVOS PARA VPN'S 📡</h2>
 
     <div class="welcome-buttons">
-      <!-- Botão "IR A LOJA" sem animação e com estilo 3D -->
+      <!-- Botões com animação de brilho -->
       <button class="button-3d" onclick="window.location.href='pagina-de-atendimento/index.html'">🛒 IR NA LOJA DE WAYS</button>
-
-      <!-- Botão "RECLAMAR & OPINIÃO" com estilo 3D -->
       <button class="button-3d" onclick="window.location.href='mailto:aldamiguelrafael@gmail.com?subject=Opinião%20sobre%20o%20site%20MOZ%20VIP%20WAY'">✍️ RECLAMAR & OPINIÃO</button>
-
-      <!-- Botão "ARQUIVOS GRÁTIS" com estilo 3D -->
-      <button class="button-3d" onclick="window.location.href='ways-gratis/index.html'">🎁 SURPRESAS E OUTOS WAYS  GRÁTIS</button>
+      <button class="button-3d" onclick="window.location.href='ways-gratis/index.html'">🎁 SURPRESAS E OUTOS WAYS GRÁTIS</button>
     </div>
 
     <div class="footer-buttons">
@@ -258,7 +292,7 @@
   <script>
     // Atualiza o contador online a cada 4 segundos (4000ms)
     setInterval(() => {
-      const numeroAleatorio = Math.floor(Math.random() * 79); // Gera de 0 a 78
+      const numeroAleatorio = Math.floor(Math.random() * 79); // 0 a 78
       document.getElementById("online-number").textContent = numeroAleatorio;
     }, 4000);
   </script>
