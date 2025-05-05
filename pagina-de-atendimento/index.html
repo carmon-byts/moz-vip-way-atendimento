@@ -2,6 +2,7 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>📡 PAGAMENTO - MOZ VIP WAY 🇲🇿</title>
   <style>
     * {
@@ -15,7 +16,7 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      min-height: 85vh;
+      min-height: 80vh; /* Altura reduzida */
       width: 100vw;
       font-family: Arial, sans-serif;
       overflow-y: auto;
@@ -105,15 +106,15 @@
       background-color: #f9f9ff;
     }
 
-    /* Animação de brilho para botões */
-    @keyframes glowButton {
-      0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.3); }
-      50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.5); }
-      100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.3); }
+    /* Animação de brilho para o botão de envio */
+    @keyframes glowBlue {
+      0% { box-shadow: 0 0 10px rgba(0, 123, 255, 0.4), inset 0 0 10px rgba(0, 123, 255, 0.2); }
+      50% { box-shadow: 0 0 20px rgba(0, 123, 255, 0.9), inset 0 0 15px rgba(0, 123, 255, 0.4); }
+      100% { box-shadow: 0 0 10px rgba(0, 123, 255, 0.4), inset 0 0 10px rgba(0, 123, 255, 0.2); }
     }
 
     button.submit {
-      background-color: #28a745;
+      background-color: #007bff; /* Fundo azul */
       color: white;
       padding: 30px 60px;
       border: none;
@@ -122,7 +123,7 @@
       cursor: pointer;
       font-weight: bold;
       margin-top: 20px;
-      animation: glowButton 2s infinite;
+      animation: glowBlue 2s infinite;
       transition: all 0.3s ease;
       width: 80%;
       max-width: 480px;
@@ -130,7 +131,12 @@
       margin: 20px auto;
     }
 
-    /* Nova animação 3D para botão TUTORIAL AQUI */
+    button.submit:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    /* Estilo e animação do botão TUTORIAL AQUI */
     @keyframes glow3D {
       0% {
         box-shadow: 0 0 10px rgba(0, 123, 255, 0.4) inset, 0 0 20px rgba(0, 123, 255, 0.3);
@@ -141,12 +147,11 @@
         transform: scale(1.02);
       }
       100% {
-        box-shadow: 0 0 10px rgba(0, 123, 255, 0.4) inset, 0 0 20px rgba(0, 123, 255, 0.3);
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.4) inset, 0 0 20px rgba(0, 123, 255, 0.2);
         transform: scale(1);
       }
     }
 
-    /* Botão TUTORIAL AQUI com estilo 3D e animação chamativa */
     .tutorial-button {
       display: inline-flex;
       align-items: center;
@@ -257,6 +262,36 @@
       .tutorial-message {
         font-size: 24px;
       }
+
+      .button.submit {
+        font-size: 22px;
+        padding: 20px 40px;
+        width: 90%;
+      }
+
+      input, textarea, select {
+        font-size: 18px;
+        padding: 20px;
+        margin: 12px 0;
+      }
+
+      h2.pagemento-title {
+        font-size: 36px;
+      }
+
+      .info-mpesa {
+        font-size: 28px;
+      }
+
+      .info-mpesa span {
+        font-size: 32px;
+      }
+
+      .copy-button {
+        font-size: 18px;
+        padding: 10px 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -269,12 +304,12 @@
 
       <!-- Mensagem animada com seta -->
       <div class="tutorial-message">
-        1° CLIQUE NO BOTÃO ABAIXO DE PAGAMENTO PARA  FAZER O PAGAMENTO CORRETO SEM ERROS E GARANTIR SEU ARQUIVO.
+        1° CLIQUE NO BOTÃO ABAIXO DE PAGAMENTO PARA FAZER O PAGAMENTO CORRETO SEM ERROS E GARANTIR SEU ARQUIVO.
       </div>
-
       <div class="arrow-down">👇</div>
     </div>
-    <!-- Botão TUTORIAL AQUI com estilo 3D e animação -->
+
+    <!-- Botão TUTORIAL AQUI com estilo 3D -->
     <button class="tutorial-button" onclick="window.location.href='../tutorial-de-pagamento/index.html'">
       📘<BR>PAGAMENTO RAPIDO E FACIL AQUI
     </button>
@@ -310,6 +345,7 @@
         <option>Bink Tunnel</option>
         <option>Aio Tunnel</option>
       </select>
+      <!-- Botão com animação de brilho azul -->
       <button type="submit" class="submit">📤 SOLICITAR SEU ARQUIVO NO WATSAPP</button>
     </form>
     <div class="message" id="statusMessage"></div>

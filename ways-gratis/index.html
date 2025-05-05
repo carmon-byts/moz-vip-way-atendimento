@@ -2,6 +2,7 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ways Grátis 🆓</title>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -11,11 +12,11 @@
 
     body {
       font-family: 'Ubuntu', sans-serif;
-      background: linear-gradient(to right, #6a11cb, #2575fc);
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
       margin: 0;
       padding: 0;
       color: #fff;
-      min-height: 100vh;
+      min-height: 85vh; /* Altura reduzida */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -24,11 +25,12 @@
 
     .container {
       background-color: rgba(0, 0, 0, 0.75);
-      padding: 60px 50px;
+      padding: 40px 30px; /* Reduzido para mobile */
       border-radius: 20px;
       box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
-      max-width: 1000px;
+      max-width: 800px;
       width: 90%;
+      margin: auto;
     }
 
     h1 {
@@ -39,19 +41,33 @@
     }
 
     .update-message {
-      font-size: 30px;
+      font-size: 28px;
       font-weight: bold;
       color: #ffcc00;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
       text-shadow: 0 0 15px #ff9900;
+    }
+
+    /* Animação de pulsação para os botões */
+    @keyframes pulseButton {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+
+    /* Animação de brilho suave */
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px #00bcd4, inset 0 0 10px #0097a7; }
+      50% { box-shadow: 0 0 20px #00e5ff, inset 0 0 15px #00cde6; }
+      100% { box-shadow: 0 0 10px #00bcd4, inset 0 0 10px #0097a7; }
     }
 
     .btn {
       display: block;
       width: 100%;
-      margin: 30px 0;
-      padding: 25px;
-      font-size: 28px;
+      margin: 25px 0;
+      padding: 22px;
+      font-size: 26px;
       font-weight: bold;
       color: #fff;
       background: linear-gradient(145deg, #00bcd4, #0097a7);
@@ -61,6 +77,26 @@
       text-decoration: none;
       box-shadow: 0 6px 0 #007b8a;
       transition: all 0.3s ease;
+      animation: pulseButton 2s infinite, glow 3s infinite;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        transparent 25%,
+        rgba(255, 255, 255, 0.1),
+        transparent 75%
+      );
+      transform: rotate(25deg);
+      pointer-events: none;
     }
 
     .btn:hover {
@@ -75,17 +111,17 @@
     }
 
     .extract-message {
-      font-size: 26px;
+      font-size: 24px;
       font-weight: bold;
       color: #ff5733;
-      margin-top: 50px;
+      margin-top: 40px;
       text-shadow: 0 0 15px #ff3300;
       letter-spacing: 2px;
     }
 
     @media (max-width: 600px) {
       .container {
-        padding: 40px 20px;
+        padding: 30px 20px;
       }
 
       h1 {
@@ -94,15 +130,17 @@
 
       .btn {
         font-size: 20px;
-        padding: 20px;
+        padding: 18px;
       }
 
       .update-message {
         font-size: 24px;
+        margin-bottom: 30px;
       }
 
       .extract-message {
-        font-size: 22px;
+        font-size: 20px;
+        margin-top: 30px;
       }
     }
   </style>
@@ -112,12 +150,19 @@
     <h1>Ways Grátis 🆓</h1>
     <div class="update-message">⚠️ ATUALIZAÇÃO EM CADA 15 DIAS ⚠️</div>
 
-    <a href="https://www.mediafire.com/file/2ai3csol1iwygyw/ARQUIVOS_GR%25C3%2581TIS_%25F0%259F%2586%2593.zip/file" class="btn" download>📁 ARQUIVOS GRÁTIS</a>
-    <a href="https://www.mediafire.com/file/qybiax2wqduzsnh/CONTAS_NETFLIX...ETC_%25E2%259C%2585.zip/file" class="btn" download>🎬 CONTAS DE NETFLIX...ETC</a>
-    <a href="https://www.mediafire.com/file/6shqryz427qy9fr/CHAVES_%25F0%259F%2594%2590_ESET_VPN.zip/file" class="btn" download>🔑 CHAVES DE ESET VPN</a>
-    <a href="https://www.mediafire.com/file/kz92hmg9x4wy2b3/SURPRESA_%25F0%259F%258E%2581.zip/file" class="btn" download>🎁 SURPRESA</a>
+    <a href="https://www.mediafire.com/file/2ai3csol1iwygyw/ARQUIVOS_GR%C3%81TIS_%F0%9F%86%93.zip/file" class="btn" download>📁 ARQUIVOS GRÁTIS</a>
+
+    <a href="https://www.mediafire.com/file/qybiax2wqduzsnh/CONTAS_NETFLIX...ETC_%E2%9C%85.zip/file" class="btn" download>🎬 CONTAS DE NETFLIX...ETC</a>
+
+    <a href="https://www.mediafire.com/file/6shqryz427qy9fr/CHAVES_%F0%9F%94%B0_ESET_VPN.zip/file" class="btn" download>🔑 CHAVES DE ESET VPN</a>
+
+    <a href="https://www.mediafire.com/file/kz92hmg9x4wy2b3/SURPRESAS_%F0%9F%8E%81.zip/file" class="btn" download>🎁 SURPRESA</a>
 
     <div class="extract-message">⭕ BAIXA E DEPOIS ESTRAI OS ARQUIVOS PARA DESCOMPACTAR ⭕</div>
   </div>
+
+  <script>
+    // Nenhuma funcionalidade adicional foi adicionada
+  </script>
 </body>
 </html>
