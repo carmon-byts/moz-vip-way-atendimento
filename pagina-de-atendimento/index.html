@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>📡 PAGAMENTO - MOZ VIP WAY 🇲🇿</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * {
       box-sizing: border-box;
@@ -15,19 +15,20 @@
       background-image: url('fundo.webp');
       background-size: cover;
       background-position: center;
-      font-family: Arial, sans-serif;
+      background-repeat: no-repeat;
       min-height: 100vh;
+      width: 100%;
+      font-family: Arial, sans-serif;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     .container {
       max-width: 100%;
       margin: 0 auto;
-      padding: 20px 15px;
+      padding: 20px;
+      background: #fff;
       text-align: center;
-      background-color: rgba(255, 255, 255, 0.95);
-      color: #222;
-      border-radius: 0;
     }
 
     .pagemento-title {
@@ -35,11 +36,11 @@
       color: #d60000;
       font-weight: bold;
       margin-bottom: 10px;
-      text-shadow: 2px 2px 4px #000;
+      text-shadow: 1px 1px 3px #000;
     }
 
     .info-mpesa {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: bold;
       margin: 15px 0;
       color: #d60000;
@@ -47,22 +48,22 @@
 
     .info-mpesa span {
       color: #007bff;
-      font-size: 28px;
+      font-size: 32px;
     }
 
     .copy-button {
       background-color: #28a745;
       color: white;
       padding: 8px 14px;
-      font-size: 16px;
+      margin-left: 8px;
+      font-size: 18px;
       border: none;
       border-radius: 6px;
       cursor: pointer;
-      margin-left: 8px;
     }
 
     .tutorial-message {
-      font-size: 20px;
+      font-size: 24px;
       font-weight: bold;
       color: #ff0000;
       margin: 15px auto;
@@ -70,8 +71,9 @@
     }
 
     .arrow-down {
-      font-size: 28px;
+      font-size: 30px;
       color: #ff0000;
+      margin: 5px auto;
       animation: fadeInOut 2s infinite;
     }
 
@@ -81,49 +83,48 @@
       100% { opacity: 0.7; }
     }
 
-    /* Botão TUTORIAL AQUI - Maior e com estilo 3D */
+    /* Botão TUTORIAL AQUI com estilo 3D */
     .tutorial-button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       width: 90%;
-      max-width: 500px;
-      height: 160px;
+      max-width: 400px;
+      height: 140px;
       font-size: 28px;
       font-weight: bold;
       background: linear-gradient(145deg, #007bff, #005eff, #003fcf, #005eff, #007bff);
+      background-size: 400% 400%;
       color: white;
       border: none;
-      border-radius: 20px;
+      border-radius: 16px;
       cursor: pointer;
       transition: all 0.3s ease;
-      animation: glowButton 3s infinite;
       position: relative;
       overflow: hidden;
-      margin: 25px auto;
+      margin: 20px auto;
     }
 
-    @keyframes glowButton {
-      0% { transform: scale(1); box-shadow: 0 0 10px rgba(0, 123, 255, 0.4); }
-      50% { transform: scale(1.02); box-shadow: 0 0 20px rgba(0, 123, 255, 0.9); }
-      100% { transform: scale(1); box-shadow: 0 0 10px rgba(0, 123, 255, 0.4); }
+    .tutorial-button:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
     }
 
-    h3.tabela-titulo {
-      font-size: 28px;
+    h3 {
+      font-size: 24px;
       color: #007bff;
       font-weight: bold;
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     table {
       width: 95%;
-      margin: 15px auto;
+      margin: 10px auto;
       border-collapse: collapse;
       border: 2px solid #007bff;
+      animation: tabelaAnimacao 1.2s ease-in-out;
       font-size: 18px;
-      animation: tabelaAnimacao 1s ease-in-out;
     }
 
     @keyframes tabelaAnimacao {
@@ -150,7 +151,7 @@
       width: 95%;
       padding: 20px;
       margin: 12px 0;
-      border-radius: 10px;
+      border-radius: 8px;
       border: 2px solid #007bff;
       font-size: 20px;
       background-color: #f9f9ff;
@@ -159,55 +160,54 @@
     button.submit {
       background-color: #28a745;
       color: white;
-      padding: 25px 50px;
-      font-size: 24px;
-      font-weight: bold;
+      padding: 25px 40px;
       border: none;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 400px;
-      margin: 25px auto;
-      display: block;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      animation: submitGlow 2s infinite;
-    }
-
-    @keyframes submitGlow {
-      0% { box-shadow: 0 0 10px rgba(40, 167, 69, 0.4); }
-      50% { box-shadow: 0 0 20px rgba(40, 167, 69, 0.8); }
-      100% { box-shadow: 0 0 10px rgba(40, 167, 69, 0.4); }
-    }
-
-    #screenshot-message {
+      border-radius: 10px;
       font-size: 24px;
-      color: #007bff;
+      cursor: pointer;
       font-weight: bold;
-      margin-top: 20px;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 12px #007bff;
       width: 90%;
+      max-width: 480px;
       margin: 20px auto;
+      display: block;
+      transition: all 0.3s ease;
     }
 
-    /* Responsividade */
+    button.submit:hover {
+      background-color: #218838;
+    }
+
+    #statusMessage {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    /* Responsivo */
     @media (max-width: 600px) {
       .pagemento-title {
         font-size: 28px;
       }
 
+      .info-mpesa {
+        font-size: 24px;
+      }
+
+      .info-mpesa span {
+        font-size: 26px;
+      }
+
       .tutorial-button {
+        height: 120px;
         font-size: 22px;
-        height: 140px;
+      }
+
+      .tutorial-message {
+        font-size: 20px;
       }
 
       .arrow-down {
         font-size: 24px;
-      }
-
-      .tutorial-message {
-        font-size: 18px;
       }
 
       table {
@@ -227,30 +227,27 @@
   </style>
 </head>
 <body>
-
   <div class="container" id="pagamento">
     <h2 class="pagemento-title">📡 PAGAMENTO VIA M-PESA / E-MOLA 📡</h2>
 
-    <!-- Informações de pagamento -->
     <div class="info-mpesa">
-      <div>📱 <span id="numero-mpesa">+258 852361783</span>
-        <button class="copy-button" onclick="copiarTexto('numero-mpesa')">Copiar Número</button>
-      </div>
+      📱 <span id="numero-mpesa">+258 852361783</span>
+      <button class="copy-button" onclick="copiarTexto('numero-mpesa')">Copiar Número</button>
     </div>
 
     <!-- Mensagem animada -->
     <div class="tutorial-message">
-      1° CLIQUE NO BOTÃO ABAIXO DE PAGAMENTO PARA FAZER O PAGAMENTO SEM ERROS.
+      1° CLIQUE NO BOTÃO ABAIXO PARA FAZER O PAGAMENTO CORRETO SEM ERROS
     </div>
     <div class="arrow-down">👇</div>
 
-    <!-- Botão principal -->
+    <!-- Botão estilizado -->
     <button class="tutorial-button" onclick="window.location.href='../tutorial-de-pagamento/index.html'">
-      📘<BR>PAGAMENTO RÁPIDO E FÁCIL AQUI
+      📘<br>PAGAMENTO FÁCIL AQUI
     </button>
 
     <!-- Tabela de preços -->
-    <h3 class="tabela-titulo">💰 Tabela de Preços</h3>
+    <h3>💰 Tabela de Preços</h3>
     <table>
       <tr><th>🛡️ VPN</th><th>💸 Preço</th></tr>
       <tr><td>🔐 Http Custom</td><td>15 MT</td></tr>
@@ -264,10 +261,10 @@
       <tr><td>🛡️ ESET</td><td>15 MT</td></tr>
     </table>
 
-    <!-- Formulário de solicitação -->
+    <!-- Formulário -->
     <form id="paymentForm">
-      <input type="text" id="name" placeholder="✍️ Seu nome" required />
-      <input type="text" id="phone" placeholder="📞 Seu número de WhatsApp" required />
+      <input type="text" id="name" placeholder="✍️ Seu nome" required>
+      <input type="text" id="phone" placeholder="📞 Seu número de WhatsApp" required>
       <select id="vpnType" required>
         <option value="" disabled selected>📂 Selecione o tipo de VPN</option>
         <option>Http Custom</option>
@@ -280,7 +277,7 @@
         <option>Bink Tunnel</option>
         <option>Aio Tunnel</option>
       </select>
-      <button type="submit" class="submit">📤 SOLICITAR SEU ARQUIVO NO WHATSAPP</button>
+      <button type="submit" class="submit">📤 SOLICITAR SEU ARQUIVO NO WATSAPP</button>
     </form>
 
     <div class="message" id="statusMessage"></div>
@@ -289,29 +286,25 @@
   <script>
     function copiarTexto(id) {
       const texto = document.getElementById(id).textContent;
-      navigator.clipboard.writeText(texto).then(() => {
-        alert("Número copiado com sucesso!");
-      }).catch(err => {
-        alert("Erro ao copiar número.");
-      });
+      navigator.clipboard.writeText(texto.trim());
+      alert("Número copiado: " + texto.trim());
     }
 
     document.getElementById("paymentForm").onsubmit = function(event) {
       event.preventDefault();
       let nome = document.getElementById("name").value.trim();
       let phone = document.getElementById("phone").value.trim();
-      let tipo = document.getElementById("vpnType").value;
+      let tipo = document.getElementById("vpnType").value.trim();
 
       if (!nome || !phone || !tipo) {
         alert("Por favor, preencha todos os campos.");
         return;
       }
 
-      let mensagem = `✅ Pagamento confirmado por ${nome}. WhatsApp do cliente: ${phone}. Solicitou: ${tipo}`;
-      let linkWhatsApp = `https://wa.me/258852361783?text=${encodeURIComponent(mensagem)}`;
+      let texto = `✅ Pagamento confirmado por ${nome}. WhatsApp do cliente: ${phone}. Solicitou: ${tipo}`;
+      let linkWhatsApp = `https://wa.me/258852361783?text=${encodeURIComponent(texto)}`;
       window.open(linkWhatsApp, '_blank');
     };
   </script>
-
 </body>
 </html>
