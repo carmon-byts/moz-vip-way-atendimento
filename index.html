@@ -5,34 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🇲🇿 MOZ VIP WAY 🇲🇿</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
       padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
       background-image: url('fundo.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      min-height: 90vh;
-      width: 95vw;
-      font-family: Arial, sans-serif;
-      overflow-y: auto;
     }
 
     .welcome-screen {
       background-image: url('bg-mozvip.webp');
       background-size: cover;
       background-position: center;
-      min-height: 95vh;
-      width: 100vw;
+      min-height: 100vh;
+      width: 100%;
       color: white;
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      position: relative;
-      will-change: transform;
-      transform: none !important;
+      padding: 20px;
     }
 
     .welcome-screen h1 {
@@ -44,8 +49,6 @@
       text-transform: uppercase;
       letter-spacing: 4px;
       animation: brilhoAnimado 2s infinite alternate;
-      will-change: transform;
-      transform: none !important;
     }
 
     @keyframes brilhoAnimado {
@@ -59,12 +62,9 @@
     .assinatura {
       font-family: 'Pacifico', cursive;
       font-size: 3rem;
-      font-style: normal;
-      font-weight: bold;
       color: #00aaff;
       text-shadow: 2px 2px 0 #003366, 4px 4px 10px rgba(0, 0, 0, 0.5);
       margin-top: 100px;
-      margin-bottom: 10px;
     }
 
     .promo-banner {
@@ -76,10 +76,6 @@
       border-radius: 12px;
       margin-top: 10px;
       animation: pulse 1.5s infinite;
-      display: inline-block;
-      white-space: nowrap;
-      will-change: transform;
-      transform: none !important;
     }
 
     @keyframes pulse {
@@ -93,7 +89,6 @@
       color: #00f0ff;
       font-weight: bold;
       margin-top: 100px;
-      margin-bottom: 0;
       text-shadow: -2px -2px 2px #66ffff, 2px 2px 2px #003344;
       border-left: 6px solid #00f0ff;
       border-right: 6px solid #00f0ff;
@@ -101,8 +96,6 @@
       border-radius: 10px;
       background: none;
       animation: pulseEffect 1.8s infinite;
-      will-change: transform;
-      transform: none !important;
     }
 
     @keyframes pulseEffect {
@@ -119,7 +112,6 @@
       margin-top: 300px;
     }
 
-    /* Estilo 3D dos botões com animação de brilho na borda */
     @keyframes purpleGlow {
       0% { box-shadow: 0 0 10px rgba(128, 0, 128, 0.5), inset 0 0 10px rgba(128, 0, 128, 0.2); }
       50% { box-shadow: 0 0 20px rgba(128, 0, 128, 0.9), inset 0 0 15px rgba(128, 0, 128, 0.4); }
@@ -141,8 +133,6 @@
       cursor: pointer;
       transition: all 0.3s ease;
       animation: purpleGlow 3s infinite;
-      position: relative;
-      z-index: 1;
     }
 
     .button-3d:hover {
@@ -154,7 +144,6 @@
       transform: scale(1.03);
     }
 
-    /* Contador de usuários online */
     .online-counter {
       position: fixed;
       top: 10px;
@@ -180,7 +169,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       background-color: transparent;
       box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
       z-index: 999;
@@ -215,7 +203,6 @@
     .footer-buttons h3 {
       font-size: 28px;
       color: yellow;
-      margin-bottom: 10px;
       font-weight: bold;
     }
 
@@ -225,12 +212,9 @@
       color: red;
       margin-top: 10px;
       text-align: center;
-      background: none;
-      text-shadow: none;
     }
 
-    /* Responsividade mínima para telas pequenas (não altera estrutura, apenas ajusta o que é necessário) */
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .welcome-screen h1 {
         font-size: 3rem;
         margin-top: -100px;
@@ -238,6 +222,10 @@
 
       .welcome-screen h2 {
         font-size: 1.8rem;
+      }
+
+      .assinatura {
+        font-size: 2rem;
       }
 
       .promo-banner {
@@ -259,8 +247,12 @@
         font-size: 14px;
       }
 
-      .footer-buttons {
-        padding: 15px 0;
+      .footer-buttons h3 {
+        font-size: 22px;
+      }
+
+      .footer-buttons p {
+        font-size: 20px;
       }
 
       .grupo-button, .config-button, .telegram-button {
@@ -272,7 +264,6 @@
 </head>
 <body>
   <div class="welcome-screen" id="welcome">
-    <!-- Contador de usuários online -->
     <div class="online-counter">
       <span>🟢</span>
       <span id="online-number">0</span> online
@@ -284,7 +275,6 @@
     <h2>📡 BEM VINDO/A NO SITE OFICIAL DE VENDAS DE ARQUIVOS PARA VPN'S 📡</h2>
 
     <div class="welcome-buttons">
-      <!-- Botões com animação de brilho -->
       <button class="button-3d" onclick="window.location.href='pagina-de-atendimento/index.html'">🛒 IR NA LOJA DE WAYS</button>
       <button class="button-3d" onclick="window.location.href='mailto:aldamiguelrafael@gmail.com?subject=Opinião%20sobre%20o%20site%20MOZ%20VIP%20WAY'">✍️ RECLAMAR & OPINIÃO</button>
       <button class="button-3d" onclick="window.location.href='ways-gratis/index.html'">🎁 SURPRESAS E OUTOS WAYS GRÁTIS</button>
@@ -292,19 +282,18 @@
 
     <div class="footer-buttons">
       <h3>🔗 Links Úteis:</h3>
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: center;">
         <button class="grupo-button" onclick="window.open('https://chat.whatsapp.com/G0TvarzpXWQ3OIo3K7WWaJ', '_blank')">💬 Grupo de WhatsApp</button>
         <button class="config-button" onclick="window.open('https://wa.link/7np01p', '_blank')">🔒 Configuração Privada</button>
         <button class="telegram-button" onclick="window.open('https://t.me/+7G8ve13KFRhjMjQ8', '_blank')">📢 Canal de Telegram</button>
       </div>
-      <p style="margin-top: 15px;">⚠️ <span style="font-size: 34px;">A sua segurança é a minha prioridade</span> ⚠️</p>
+      <p>⚠️ <span style="font-size: 24px;">A sua segurança é a minha prioridade</span> ⚠️</p>
     </div>
   </div>
 
   <script>
-    // Atualiza o contador online a cada 4 segundos (4000ms)
     setInterval(() => {
-      const numeroAleatorio = Math.floor(Math.random() * 79); // 0 a 78
+      const numeroAleatorio = Math.floor(Math.random() * 79);
       document.getElementById("online-number").textContent = numeroAleatorio;
     }, 4000);
   </script>
